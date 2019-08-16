@@ -1,0 +1,38 @@
+
+@charset "UTF-8";
+/* CSS Document */
+
+/*Overall stuff*/
+html{
+	overflow-y: scroll;
+	-moz-scrollbars: vertical;
+	font-family: 'Amatic SC', cursive;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+	font-family: 'Roboto', sans-serif;
+}
+
+p{
+	padding-bottom: 1em;
+	font-size: .9em;
+}
+
+#wrapper{
+	margin: 0 auto;
+}
+/*Overall stuff end*/
+
+
