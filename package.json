@@ -1,0 +1,30 @@
+{
+  "name": "team-collab-AngelizaMedina",
+  "version": "1.0.0",
+  "description": "For at komme godt i gang efter en forhåbentlig herligt god sommerferie, starter vi op med en forholdvis afgrænset opgave der gerne skulle opfriske hukommelsen på alt det vi har arbejdet med før sommerferien.",
+  "main": "index.js",
+  "dependencies": {
+    "app": "^0.1.0",
+    "date-and-time": "^0.9.0",
+    "ejs": "^2.6.2",
+    "express": "^4.17.1",
+    "morgan": "^1.9.1",
+    "mysql2": "^1.6.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rts-cmk-wuhf01/team-collab-AngelizaMedina.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rts-cmk-wuhf01/team-collab-AngelizaMedina/issues"
+  },
+  "homepage": "https://github.com/rts-cmk-wuhf01/team-collab-AngelizaMedina#readme"
+}
