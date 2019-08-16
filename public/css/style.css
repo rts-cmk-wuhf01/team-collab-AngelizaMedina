@@ -6,7 +6,7 @@
 html{
 	overflow-y: scroll;
 	-moz-scrollbars: vertical;
-	font-family: 'Amatic SC', cursive;
+	font-family: 'Roboto', sans-serif;
 }
 
 .clearfix::after {
@@ -21,16 +21,14 @@ html{
 	box-sizing: border-box;
 }
 
-body{
-	font-family: 'Roboto', sans-serif;
-}
-
 p{
 	padding-bottom: 1em;
 	font-size: .9em;
 }
 
 #wrapper{
+	background-color: black;
 	margin: 0 auto;
+	max-width: 1200px;
 }
 /*Overall stuff end*/
