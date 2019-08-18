@@ -46,5 +46,38 @@ module.exports = (app) => {
 
 	/*----------------------------------------------------- Contact end -------------------------------------------------*/
 
+  app.post('/contact/', async (req, res, next) => {
+
+		let name = req.body.name;
+
+		let email = req.body.email;
+
+    let subject = req.body.subject;
+    
+    let message = req.body.message;
+
+		let db = await mysql.connect();
+
+		let result = await db.execute(`
+			INSERT INTO messages (
+        name,
+        email,
+        subject,
+        message
+			) 
+			VALUES 
+				(?, ?, ?, ?)`, [
+          name,
+          email,
+          subject,
+          message
+				]
+		);
+	
+		db.end();
+
+		res.redirect('/contact');
+		
+	 }); // app.post('/admin/add'...) END
 
 }
