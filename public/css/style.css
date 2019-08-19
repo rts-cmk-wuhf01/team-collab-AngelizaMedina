@@ -32,7 +32,59 @@ p{
 
 #wrapper{
 	margin: 0 auto;
+	width: 70%;
 }
 /*Overall stuff end*/
 
+.row{
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	align-items: center;
+    justify-content: center;
+}
+.column{
+	/* height: 50vh; */
+	width: 20vw;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+img{
+	height: 100%;
+	width: 100%;
+}
+.movie-info{
+	background-color: #ffffffc5;
+	-webkit-box-shadow: 4px 4px 6px -2px rgba(0,0,0,0.5);
+	-moz-box-shadow: 4px 4px 6px -2px rgba(0,0,0,0.5);
+	box-shadow: 4px 4px 6px -2px rgba(0,0,0,0.5);
+	margin-bottom: 10px;
+}
+header{
+	display: flex;
+	justify-content: center;
+}
+nav{
+	background-color: #1a1a1a;
+	height: 50px;
+	width: 100%;
+	text-align: center;
+}
+ul{
+	display: flex;
+	justify-content: center;
+	align-content: center;
+}
+li{
+	list-style-type: none;
+	align-self: center;
+	padding: 10px;
+}
+a{
+	text-decoration: none;
+	color: #ffffff;
+	display: inline;
+}
+h1{
 
+}
