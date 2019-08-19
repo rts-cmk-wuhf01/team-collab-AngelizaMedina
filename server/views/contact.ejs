@@ -56,13 +56,7 @@
 				</div>
 
 				<div class="contactFormField">
-					<textarea 
-						class="contactFormTxtArea"
-						name="message" 
-						placeholder="Write your message here"
-					>
-						<%= typeof values != 'undefined' ? values.message : '' %>
-					</textarea>
+					<textarea class="contactFormTxtArea" name="message" placeholder="Write your message here"><%= typeof values != 'undefined' ? values.message : '' %></textarea>
 				</div>
 
 				<button id="sendButton" type="submit">Send</button>
