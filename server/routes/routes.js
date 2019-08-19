@@ -129,7 +129,7 @@ module.exports = (app) => {
 
 			res.redirect('/contact');
 
-		}
+		} // else if(...) END
 		
 	}); // app.post('/contact'...) END
 
