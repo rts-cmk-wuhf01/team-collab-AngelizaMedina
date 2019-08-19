@@ -23,16 +23,16 @@
 	<div id="wrapper">
 
 		<main>
-			<form Id="contactForm" method="post">
+			<form id="contactForm" method="post">
 
 				<div class="contactFormField">
-					<input 
-						class="contactFormInput"
-						name="name" 
-						type="text"  
-						placeholder="Full name"
-						value="<%= typeof values != 'undefined' ? values.name: '' %>"
-					>
+						<input 
+							class="contactFormInput"
+							name="name" 
+							type="text"  
+							placeholder="Full name"
+							value="<%= typeof values != 'undefined' ? values.name: '' %>"
+						>
 				</div>
 
 				<div class="contactFormField">
@@ -41,7 +41,7 @@
 						name="email" 
 						type="text"  
 						placeholder="Email"
-						value="<%= typeof values != 'undefined' ? values.email: '' %>"
+						value="<%= typeof values != 'undefined' ? values.name: '' %>"
 					>
 				</div>
 
@@ -67,6 +67,13 @@
 
 				<button id="sendButton" type="submit">Send</button>
 			</form> <!-- #ContactForm end -->
+			
+			<% if( typeof return_message != 'undefined'){ %>
+				<div id="returnMessageContainer">
+					<%= return_message %>
+				</div> <!-- #returnMessageContainer -->
+			<% } %>
+
 		</main>
 
 		<footer>

@@ -56,30 +56,46 @@ module.exports = (app) => {
 
 		let message = req.body.message;
 
+		let return_message = [];
+	
 		let db = await mysql.connect();
 
-		let result = await db.execute(`
-			INSERT INTO messages (
-				message_name,
-				message_email,
-				message_subject,
-				message_message
-			) 
-			VALUES 
-				(?, ?, ?, ?)`, [
-					name,
-					email,
-					subject,
-					message
-				]
-		);
-	
-		db.end();
+		if (typeof name == 'undefined' || name == '' ||
+				typeof email == 'undefined' || email == '' ||
+				typeof subject == 'undefined' || subject == '' ||
+				typeof message == 'undefined' || message == '') {
 
-		res.redirect('/');
+			return_message.push('Please fill out all the fields!');
+
+			res.render('contact', {
+				'return_message': return_message
+			});
+
+		}else{
+
+			let result = await db.execute(`
+				INSERT INTO messages (
+					message_name,
+					message_email,
+					message_subject,
+					message_message
+				) 
+				VALUES 
+					(?, ?, ?, ?)`, [
+						name,
+						email,
+						subject,
+						message
+					]
+			);
 		
-	 }); // app.post('/contact'...) END
+			db.end();
+
+			res.redirect('/contact');
+
+		}
+		
+	}); // app.post('/contact'...) END
 
 
-
-}
+} //module.exports END
