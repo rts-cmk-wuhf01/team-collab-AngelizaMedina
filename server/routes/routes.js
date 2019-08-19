@@ -90,13 +90,15 @@ module.exports = (app) => {
 			return_messages.push('Please write a message');
 		}
 
+		//Send the message to our database
+		if(return_messages.length > 0){
+
 			res.render('contact', {
 				'return_messages': return_messages,
 				'values': req.body
 			});
 
-		//Send the message to our database
-		if(return_messages.length == 0){
+		}else if(return_messages.length == 0){
 
 			let db = await mysql.connect();
 
