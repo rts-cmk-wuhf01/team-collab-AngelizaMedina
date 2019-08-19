@@ -66,31 +66,37 @@ module.exports = (app) => {
 	 	var dotpos = email.lastIndexOf("."); //To check if the last . is placed correctly
 
 
+		// Check if 'name' has been filled out
 		if (typeof name == 'undefined' || name == ''){
 			return_messages.push('Please provide your name');
 		} 
 
+		// Check if 'name' contains any numbers
 		if (name.match(numbers)){
 			return_messages.push('Numbers in the name field is not allowed');
 		}
 		
-		if(typeof email == 'undefined' || email == ''){
+		// Check if 'email' has been filled out
+		if (typeof email == 'undefined' || email == ''){
 			return_messages.push('Please provide your email');
 		}
 
+		// Check if the 'email' is valid
 		if(atpos < 1 || dotpos < atpos + 2 || email.length <= dotpos + 2){
 			return_messages.push('Please provide a valid email');
 		}
 
+		// Check if 'subject' has been filled out
 		if(typeof subject == 'undefined' || subject == ''){
 			return_messages.push('Please provide a subject');
 		}
 
+		// Check if 'message' has been filled out
 		if(typeof message == 'undefined' || message == ''){
 			return_messages.push('Please write a message');
 		}
 
-		//Send the message to our database
+		// Don't send the message to the database if any of the above statements are true
 		if(return_messages.length > 0){
 
 			res.render('contact', {
@@ -98,6 +104,7 @@ module.exports = (app) => {
 				'values': req.body
 			});
 
+		// Send the message to the database
 		}else if(return_messages.length == 0){
 
 			let db = await mysql.connect();
