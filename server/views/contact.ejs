@@ -22,11 +22,45 @@
 	<div id="wrapper">
 
 		<main>
-			<form>
+			<form Id="contactForm" method="post">
 
+				<div class="contactFormInput">
+					<input 
+						name="name" 
+						type="text"  
+						placeholder="Full name"
+						value="<%= typeof values != 'undefined' ? values.name: '' %>"
+					>
+				</div>
+
+				<div class="contactFormInput">
+					<input 
+						name="email" 
+						type="text"  
+						placeholder="Email"
+						value="<%= typeof values != 'undefined' ? values.email: '' %>"
+					>
+				</div>
+
+				<div class="contactFormInput">
+					<input 
+						name="subject" 
+						type="text"  
+						placeholder="Subject"
+						value="<%= typeof values != 'undefined' ? values.subject: '' %>"
+					>
+				</div>
+
+				<textarea 
+					class="contactFormInput contactFormTxtArea"
+					name="message" 
+					placeholder="Write your message here"
+				>
+					<%= typeof values != 'undefined' ? values.message : '' %>
+				</textarea>
 
 				<button id="sendButton" type="submit">Send</button>
-			</form>
+			</form> <!-- #ContactForm end -->
 		</main>
 
 		<footer>
