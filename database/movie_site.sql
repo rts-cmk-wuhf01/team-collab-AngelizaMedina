@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 16, 2019 at 12:52 PM
+-- Generation Time: Aug 19, 2019 at 07:51 AM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.1
 
@@ -30,9 +30,10 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `messages` (
   `message_id` int(11) NOT NULL,
-  `name` varchar(100) CHARACTER SET utf8 NOT NULL,
-  `email` varchar(100) CHARACTER SET utf8 NOT NULL,
-  `message` varchar(500) CHARACTER SET utf8 NOT NULL
+  `message_name` varchar(100) CHARACTER SET utf8 NOT NULL,
+  `message_email` varchar(100) CHARACTER SET utf8 NOT NULL,
+  `message_subject` varchar(100) CHARACTER SET utf8 NOT NULL,
+  `message_message` varchar(500) CHARACTER SET utf8 NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -46,7 +47,8 @@ CREATE TABLE `movies` (
   `movie_title` varchar(100) CHARACTER SET utf8 NOT NULL,
   `movie_premier_date` date NOT NULL,
   `movie_resume` varchar(300) CHARACTER SET utf8 NOT NULL,
-  `movie_img` varchar(100) NOT NULL
+  `movie_img` varchar(100) NOT NULL,
+  `movie_trailer` varchar(300) CHARACTER SET utf8 NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
