@@ -1,0 +1,33 @@
+
+@charset "UTF-8";
+/* CSS Document */
+
+.contactFormField{
+	margin: 1% 0;
+}
+
+.contactFormInput, .contactFormTxtArea, .contactFormTxtArea{
+	font-size: 1em;
+}
+
+.contactFormInput, .contactFormTxtArea{
+	width: 30%;
+}
+
+.contactFormInput{
+	height: 25px;
+}
+
+.contactFormTxtArea{
+	resize: none;
+	width: 60%;
+	height: 250px;
+}
+
+#sendButton{
+	width: 10%;
+	height: 25px;
+}
+
+
+

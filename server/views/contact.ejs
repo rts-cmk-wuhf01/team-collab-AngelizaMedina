@@ -12,6 +12,7 @@
 
 	<!-- css link -->
 	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/form.css">
 
 	<!-- Font Awesome link -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" 
@@ -24,8 +25,9 @@
 		<main>
 			<form Id="contactForm" method="post">
 
-				<div class="contactFormInput">
+				<div class="contactFormField">
 					<input 
+						class="contactFormInput"
 						name="name" 
 						type="text"  
 						placeholder="Full name"
@@ -33,8 +35,9 @@
 					>
 				</div>
 
-				<div class="contactFormInput">
+				<div class="contactFormField">
 					<input 
+						class="contactFormInput"
 						name="email" 
 						type="text"  
 						placeholder="Email"
@@ -42,8 +45,9 @@
 					>
 				</div>
 
-				<div class="contactFormInput">
+				<div class="contactFormField">
 					<input 
+						class="contactFormInput"
 						name="subject" 
 						type="text"  
 						placeholder="Subject"
@@ -51,13 +55,15 @@
 					>
 				</div>
 
-				<textarea 
-					class="contactFormInput contactFormTxtArea"
-					name="message" 
-					placeholder="Write your message here"
-				>
-					<%= typeof values != 'undefined' ? values.message : '' %>
-				</textarea>
+				<div class="contactFormField">
+					<textarea 
+						class="contactFormTxtArea"
+						name="message" 
+						placeholder="Write your message here"
+					>
+						<%= typeof values != 'undefined' ? values.message : '' %>
+					</textarea>
+				</div>
 
 				<button id="sendButton" type="submit">Send</button>
 			</form> <!-- #ContactForm end -->
