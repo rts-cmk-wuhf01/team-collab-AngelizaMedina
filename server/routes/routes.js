@@ -107,6 +107,11 @@ module.exports = (app) => {
 		// Send the message to the database
 		}else if(return_messages.length == 0){
 
+			let today = new Date();
+			let date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+			let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+			let dateTime = date+' '+time;
+
 			let db = await mysql.connect();
 
 			let result = await db.execute(`
