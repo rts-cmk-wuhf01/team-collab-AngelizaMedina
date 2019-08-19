@@ -64,12 +64,10 @@
 			
 			<% if( typeof return_messages != 'undefined'){ %>
 				<div id="returnMessageContainer">
-				<% return_messages.forEach(return_message => { %>
-					
-							<%= return_message %><br>
-				
-				<% }) %> <!-- return_messages.forEach end -->
-			</div> <!-- #returnMessageContainer -->
+					<% return_messages.forEach(return_message => { %>
+						<%= return_message %><span class="exclamationMark">!</span><br>
+					<% }) %> <!-- return_messages.forEach end -->
+				</div> <!-- #returnMessageContainer -->
 			<% } %>
 
 		</main>

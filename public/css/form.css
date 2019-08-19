@@ -38,6 +38,13 @@
 	padding: 1%;
 	font-size: .9em;
 	border: 1px solid rgb(255, 0, 0);
+	line-height: 30px;
+}
+
+.exclamationMark{
+	margin-left: 15px;
+	font-size: 2em;
+	font-weight: bold;
 }
 
 
