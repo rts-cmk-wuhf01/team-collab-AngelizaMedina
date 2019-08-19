@@ -12,6 +12,7 @@
 
 	<!-- css link -->
 	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/form.css">
 
 	<!-- Font Awesome link -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" 
@@ -22,24 +23,53 @@
 	<div id="wrapper">
 
 		<main>
-      <form id="contactForm" method="post">
-        <div class="contactInput">
-          <input 
-            name="name" 
-            type="text"  
-            placeholder="Full Name"
-            value="<%= typeof values != 'undefined' ? values.name: '' %>"
-          >
-        </div>
-  
-        <div class="contactInput">
-          <input 
-            name="email" 
-            type="text"  
-            placeholder="Email"
-            value="<%= typeof values != 'undefined' ? values.email: '' %>"
-          >
-        </div>
+
+			<form id="contactForm" method="post">
+
+				<div class="contactFormField">
+						<input 
+							class="contactFormInput"
+							name="name" 
+							type="text"  
+							placeholder="Full name"
+							value="<%= typeof values != 'undefined' ? values.name: '' %>"
+						>
+				</div>
+
+				<div class="contactFormField">
+					<input 
+						class="contactFormInput"
+						name="email" 
+						type="text"  
+						placeholder="Email"
+						value="<%= typeof values != 'undefined' ? values.email: '' %>"
+					>
+				</div>
+
+				<div class="contactFormField">
+					<input 
+						class="contactFormInput"
+						name="subject" 
+						type="text"  
+						placeholder="Subject"
+						value="<%= typeof values != 'undefined' ? values.subject: '' %>"
+					>
+				</div>
+
+				<div class="contactFormField">
+					<textarea class="contactFormTxtArea" name="message" placeholder="Write your message here"><%= typeof values != 'undefined' ? values.message : '' %></textarea>
+				</div>
+
+				<button id="sendButton" type="submit">Send</button>
+			</form> <!-- #ContactForm end -->
+			
+			<% if( typeof return_messages != 'undefined'){ %>
+				<div id="returnMessageContainer">
+					<% return_messages.forEach(return_message => { %>
+						<%= return_message %><span class="exclamationMark">!</span><br>
+					<% }) %> <!-- return_messages.forEach end -->
+				</div> <!-- #returnMessageContainer -->
+			<% } %>
 
         <div class="contactInput">
           <input 
