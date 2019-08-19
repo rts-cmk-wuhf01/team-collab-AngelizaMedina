@@ -57,8 +57,12 @@ module.exports = (app) => {
 		let message = req.body.message;
 
 		let return_message = [];
-	
-		let db = await mysql.connect();
+
+		//Variables to validate the different fields in the 'Contact' form
+		const numbers = /^[0-9]+$/; //All the numbers from 0-9
+		var atpos = email.indexOf("@"); //To check if the @ is placed correctly
+	 	var dotpos = email.lastIndexOf("."); //To check if the last . is placed correctly
+
 
 		if (typeof name == 'undefined' || name == '' ||
 				typeof email == 'undefined' || email == '' ||
@@ -71,7 +75,25 @@ module.exports = (app) => {
 				'return_message': return_message
 			});
 
+		}else if(name.match(numbers)){
+
+			return_message.push('No numbers in the name field!');
+
+			res.render('contact', {
+				'return_message': return_message
+			});
+
+		}else if(atpos < 1 || dotpos < atpos + 2 || email.length <= dotpos + 2){
+
+			return_message.push('Please enter a valid email');
+
+			res.render('contact', {
+				'return_message': return_message
+			});
+
 		}else{
+
+			let db = await mysql.connect();
 
 			let result = await db.execute(`
 				INSERT INTO messages (
