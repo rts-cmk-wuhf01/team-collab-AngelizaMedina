@@ -41,7 +41,7 @@
 						name="email" 
 						type="text"  
 						placeholder="Email"
-						value="<%= typeof values != 'undefined' ? values.name: '' %>"
+						value="<%= typeof values != 'undefined' ? values.email: '' %>"
 					>
 				</div>
 
@@ -62,10 +62,14 @@
 				<button id="sendButton" type="submit">Send</button>
 			</form> <!-- #ContactForm end -->
 			
-			<% if( typeof return_message != 'undefined'){ %>
+			<% if( typeof return_messages != 'undefined'){ %>
 				<div id="returnMessageContainer">
-					<%= return_message %>
-				</div> <!-- #returnMessageContainer -->
+				<% return_messages.forEach(return_message => { %>
+					
+							<%= return_message %><br>
+				
+				<% }) %> <!-- return_messages.forEach end -->
+			</div> <!-- #returnMessageContainer -->
 			<% } %>
 
 		</main>

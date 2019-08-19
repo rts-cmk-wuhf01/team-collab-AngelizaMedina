@@ -56,42 +56,47 @@ module.exports = (app) => {
 
 		let message = req.body.message;
 
-		let return_message = [];
+		let return_messages = [];
+
 
 		//Variables to validate the different fields in the 'Contact' form
+
 		const numbers = /^[0-9]+$/; //All the numbers from 0-9
 		var atpos = email.indexOf("@"); //To check if the @ is placed correctly
 	 	var dotpos = email.lastIndexOf("."); //To check if the last . is placed correctly
 
 
-		if (typeof name == 'undefined' || name == '' ||
-				typeof email == 'undefined' || email == '' ||
-				typeof subject == 'undefined' || subject == '' ||
-				typeof message == 'undefined' || message == '') {
+		if (typeof name == 'undefined' || name == ''){
+			return_messages.push('Please provide your name');
+		} 
 
-			return_message.push('Please fill out all the fields!');
+		if (name.match(numbers)){
+			return_messages.push('Numbers in the name field is not allowed');
+		}
+		
+		if(typeof email == 'undefined' || email == ''){
+			return_messages.push('Please provide your email');
+		}
+
+		if(atpos < 1 || dotpos < atpos + 2 || email.length <= dotpos + 2){
+			return_messages.push('Please provide a valid email');
+		}
+
+		if(typeof subject == 'undefined' || subject == ''){
+			return_messages.push('Please provide a subject');
+		}
+
+		if(typeof message == 'undefined' || message == ''){
+			return_messages.push('Please write a message');
+		}
 
 			res.render('contact', {
-				'return_message': return_message
+				'return_messages': return_messages,
+				'values': req.body
 			});
 
-		}else if(name.match(numbers)){
-
-			return_message.push('No numbers in the name field!');
-
-			res.render('contact', {
-				'return_message': return_message
-			});
-
-		}else if(atpos < 1 || dotpos < atpos + 2 || email.length <= dotpos + 2){
-
-			return_message.push('Please enter a valid email');
-
-			res.render('contact', {
-				'return_message': return_message
-			});
-
-		}else{
+		//Send the message to our database
+		if(return_messages.length == 0){
 
 			let db = await mysql.connect();
 
