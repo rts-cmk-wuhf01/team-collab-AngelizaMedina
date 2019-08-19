@@ -2,6 +2,15 @@
 @charset "UTF-8";
 /* CSS Document */
 
+#contactH1{
+	margin: 2% 0;
+}
+
+#contactForm{
+	padding: 1%;
+	background-color: rgba(0, 0, 0, 0.678);
+}
+
 .contactFormField{
 	margin: 1% 0;
 }
@@ -29,6 +38,7 @@
 #sendButton{
 	width: 10%;
 	height: 25px;
+	cursor: pointer;
 }
 
 #returnMessageContainer{
