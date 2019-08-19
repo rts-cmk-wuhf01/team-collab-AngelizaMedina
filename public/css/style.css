@@ -27,8 +27,9 @@ p{
 }
 
 #wrapper{
-	background-color: black;
+	/* background-color: black; */
 	margin: 0 auto;
 	max-width: 1200px;
 }
 /*Overall stuff end*/
+
