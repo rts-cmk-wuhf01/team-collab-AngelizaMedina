@@ -23,6 +23,7 @@
 	<div id="wrapper">
 
 		<main>
+
 			<form id="contactForm" method="post">
 
 				<div class="contactFormField">
@@ -70,6 +71,27 @@
 				</div> <!-- #returnMessageContainer -->
 			<% } %>
 
+        <div class="contactInput">
+          <input 
+            name="subject" 
+            type="text"  
+            placeholder="Email"
+            value="<%= typeof values != 'undefined' ? values.subject: '' %>"
+          >
+        </div>
+
+        <textarea 
+          class="contactInput"
+          name="message" 
+          placeholder="Entry Text"
+        >
+          <%= typeof values != 'undefined' ? values.message : '' %>
+        </textarea>
+  
+        <div is="sendButtonContainer">
+          <button id="sendButton" type="submit">Send</button>
+        </div>
+      </form> <!-- #contactForm end -->
 		</main>
 
 		<footer>
