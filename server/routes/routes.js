@@ -59,6 +59,10 @@ module.exports = (app) => {
 
 		let message = req.body.message;
 
+		
+		let return_message_h1 = "Something went wrong...";
+		let return_message_h2 = "Check following:";
+
 		let return_messages = [];
 
 
@@ -106,6 +110,8 @@ module.exports = (app) => {
 			return_message_h2 = "Check following:";
 
 			res.render('contact', {
+				'return_message_h1': return_message_h1,
+				'return_message_h2': return_message_h2,
 				'return_messages': return_messages,
 				'values': req.body
 			});
