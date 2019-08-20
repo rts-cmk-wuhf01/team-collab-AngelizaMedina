@@ -59,6 +59,10 @@ module.exports = (app) => {
 
 		let message = req.body.message;
 
+		
+		let return_message_h1 = "Something went wrong...";
+		let return_message_h2 = "Check following:";
+
 		let return_messages = [];
 
 
@@ -69,37 +73,56 @@ module.exports = (app) => {
 	 	var dotpos = email.lastIndexOf("."); //To check if the last . is placed correctly
 
 
+		// Check if 'name' has been filled out
 		if (typeof name == 'undefined' || name == ''){
 			return_messages.push('Please provide your name');
 		} 
 
+		// Check if 'name' contains any numbers
 		if (name.match(numbers)){
 			return_messages.push('Numbers in the name field is not allowed');
 		}
 		
-		if(typeof email == 'undefined' || email == ''){
+		// Check if 'email' has been filled out
+		if (typeof email == 'undefined' || email == ''){
 			return_messages.push('Please provide your email');
 		}
 
+		// Check if the 'email' is valid
 		if(atpos < 1 || dotpos < atpos + 2 || email.length <= dotpos + 2){
 			return_messages.push('Please provide a valid email');
 		}
 
+		// Check if 'subject' has been filled out
 		if(typeof subject == 'undefined' || subject == ''){
 			return_messages.push('Please provide a subject');
 		}
 
+		// Check if 'message' has been filled out
 		if(typeof message == 'undefined' || message == ''){
 			return_messages.push('Please write a message');
 		}
 
+		// Don't send the message to the database if any of the above statements are true
+		if(return_messages.length > 0){
+
+			return_message_h1 = "Something went wrong...";
+			return_message_h2 = "Check following:";
+
 			res.render('contact', {
+				'return_message_h1': return_message_h1,
+				'return_message_h2': return_message_h2,
 				'return_messages': return_messages,
 				'values': req.body
 			});
 
-		//Send the message to our database
-		if(return_messages.length == 0){
+		// Send the message to the database
+		}else if(return_messages.length == 0){
+
+			let today = new Date();
+			let date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+			let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+			let dateTime = date+' '+time;
 
 			let db = await mysql.connect();
 
@@ -108,14 +131,16 @@ module.exports = (app) => {
 					message_name,
 					message_email,
 					message_subject,
-					message_message
+					message_message,
+					message_date_time
 				) 
 				VALUES 
-					(?, ?, ?, ?)`, [
+					(?, ?, ?, ?, ?)`, [
 						name,
 						email,
 						subject,
-						message
+						message,
+						dateTime
 					]
 			);
 		
@@ -123,7 +148,7 @@ module.exports = (app) => {
 
 			res.redirect('/contact');
 
-		}
+		} // else if(...) END
 		
 	}); // app.post('/contact'...) END
 
