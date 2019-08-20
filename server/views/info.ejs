@@ -10,8 +10,8 @@
 
 	<title>Movie info - Info</title>
 
-	<!-- css link -->
-	<link rel="stylesheet" href="/css/style.css">
+	<!-- css link --> 
+	<link rel="stylesheet" href="/css/info.css">
 
 	<!-- Font Awesome link -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" 
@@ -19,10 +19,62 @@
 </head>
 
 <body>
-	<div id="wrapper">
+	<div id="wrapper"> 
 
 		<main>
 
+			<h1>Tester</h1>
+
+			<!-- <div id="outerBox">
+
+				<div id="moviePoster">
+					<img src="/images/godzilla2.jpg">
+				</div>
+
+				<div id="movieTrailer">
+					<iframe width="100%" height="100%" src="https://www.youtube.com/embed/QFxN2oDKk0E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+
+				<div id="movieText">
+					<div id="innerMovieText">
+						<h3>Godzilla 2: King of the Monsters</h3>
+						<p>The crypto-zoological agency Monarch faces off against a battery of god-sized monsters, including the mighty Godzilla, who collides with Mothra, Rodan, and his ultimate nemesis, the three-headed King Ghidorah.</p>
+						<a href="#">Read more  <i class="fas fa-chevron-circle-right"></i></a>
+					</div>
+				</div>
+
+			</div> -->
+
+				
+
+					<% if(typeof blogPost != 'undefined') { %>
+			
+					<% blogPost.forEach(product => { %>
+
+					<div id="outerBox">
+
+						<div id="moviePoster">
+							<%= <img src="/images/godzilla2.jpg"> %>
+						</div>
+
+						<div id="movieText">
+							<div id="innerMovieText">
+								<h3><%= Godzilla 2: King of the Monsters %></h3>
+								<p><%= The crypto-zoological agency Monarch faces off against a battery of god-sized monsters, including the mighty Godzilla, who collides with Mothra, Rodan, and his ultimate nemesis, the three-headed King Ghidorah. %></p>
+								<a href="#">Read more  <i class="fas fa-chevron-circle-right"></i></a>
+							</div>
+						</div>
+
+					</div>
+				
+					<% }); %>
+						
+					<% } %>
+
+				
+
+			
+			
 		</main>
 
 		<footer>
