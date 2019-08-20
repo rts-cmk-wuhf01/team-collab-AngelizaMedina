@@ -99,6 +99,9 @@ module.exports = (app) => {
 		// Don't send the message to the database if any of the above statements are true
 		if(return_messages.length > 0){
 
+			return_message_h1 = "Something went wrong...";
+			return_message_h2 = "Check following:";
+
 			res.render('contact', {
 				'return_messages': return_messages,
 				'values': req.body

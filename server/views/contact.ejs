@@ -69,9 +69,14 @@
 				
 				<% if( typeof return_messages != 'undefined'){ %>
 					<div id="returnMessageContainer">
-						<% return_messages.forEach(return_message => { %>
-							<%= return_message %><span class="exclamationMark">!</span><br>
-						<% }) %> <!-- return_messages.forEach end -->
+						<h1 id="returnMessageH1">Something went wrong...</h1>
+						<h2 id="returnMessageH2">Check following:</h2>
+
+						<ul>
+							<% return_messages.forEach(return_message => { %>
+								<li><%= return_message %><span class="exclamationMark">!</span><br></li>
+							<% }) %> <!-- return_messages.forEach end -->
+						</ul>
 					</div> <!-- #returnMessageContainer -->
 				<% } %>
 			</div> <!-- #formSectionContainer END -->
