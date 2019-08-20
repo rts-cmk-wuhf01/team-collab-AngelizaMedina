@@ -35,9 +35,19 @@
 								class="contactFormInput"
 								name="name" 
 								type="text"  
-								placeholder="Full name"
+								placeholder="Name"
 								value="<%= typeof values != 'undefined' ? values.name: '' %>"
 							>
+					</div>
+
+					<div class="contactFormField">
+						<input 
+							class="contactFormInput"
+							name="surname" 
+							type="text"  
+							placeholder="Surname"
+							value="<%= typeof values != 'undefined' ? values.surname: '' %>"
+						>
 					</div>
 
 					<div class="contactFormField">

@@ -53,6 +53,8 @@ module.exports = (app) => {
 
 		let name = req.body.name;
 
+		let surname = req.body.surname;
+
 		let email = req.body.email;
 
 		let subject = req.body.subject;
@@ -81,6 +83,16 @@ module.exports = (app) => {
 		// Check if 'name' contains any numbers
 		if (name.match(numbers)){
 			return_messages.push('"Name" field must not contain any numbers');
+		}
+
+		// Check if 'surname' has been filled out
+		if (typeof surname == 'undefined' || surname == ''){
+			return_messages.push('"Surname" field has been left empty');
+		} 
+
+		// Check if 'surname' contains any numbers
+		if (surname.match(numbers)){
+			return_messages.push('"Surname" field must not contain any numbers');
 		}
 		
 		// Check if 'email' has been filled out
@@ -129,14 +141,16 @@ module.exports = (app) => {
 			let result = await db.execute(`
 				INSERT INTO messages (
 					message_name,
+					message_surname,
 					message_email,
 					message_subject,
 					message_message,
 					message_date_time
 				) 
 				VALUES 
-					(?, ?, ?, ?, ?)`, [
+					(?, ?, ?, ?, ?, ?)`, [
 						name,
+						surname,
 						email,
 						subject,
 						message,
