@@ -55,7 +55,9 @@ module.exports = (app) => {
 
 		let db = await mysql.connect();
 
-		let searchResults = await getSearchResults(req.params.searchInput);
+		let searchInput = req.body.search;
+
+		let searchResults = await getSearchResults(searchInput);
 
 		res.render('search', {
 			'searchResults': searchResults
@@ -221,11 +223,12 @@ async function getSearchResults(searchInput) {
  		FROM movies 
  
 		WHERE 
-		movie_title LIKE '%?%'
- 		OR
-		movie_resume LIKE '%?%'
+		movie_title LIKE %?%
+		OR
+		movie_resume LIKE %?%
 
-		`, [searchInput]);
+	`, [searchInput]);
+
 	db.end();
 	return searchResults;
 }
