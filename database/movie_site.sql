@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Vært: 127.0.0.1
--- Genereringstid: 20. 08 2019 kl. 07:49:56
+-- Genereringstid: 20. 08 2019 kl. 08:22:00
 -- Serverversion: 10.1.30-MariaDB
 -- PHP-version: 7.2.1
 
@@ -57,9 +57,9 @@ CREATE TABLE `movies` (
 --
 
 INSERT INTO `movies` (`movie_id`, `movie_title`, `movie_premier_date`, `movie_resume`, `movie_img`, `movie_trailer`) VALUES
-(1, 'Edge of Tomorrow', '2014-05-28', 'A soldier fighting aliens gets to relive the same day over and over again, the day restarting every time he dies.', 'edgeOfTomorrow.jpg', 'Dummy Data'),
-(2, 'The Imitation Game', '2014-08-29', 'During World War II, the English mathematical genius Alan Turing tries to crack the German Enigma code with help from fellow mathematicians.', 'theImitationGame.jpg', 'Dummy Data'),
-(3, 'Inception', '2010-07-13', 'A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.', 'inception.jpg', 'Dummy Data');
+(1, 'Edge of Tomorrow', '2014-05-28', 'A soldier fighting aliens gets to relive the same day over and over again, the day restarting every time he dies.', 'edgeOfTomorrow.jpg', '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube-nocookie.com/embed/vw61gCe2oqI\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>'),
+(2, 'The Imitation Game', '2014-08-29', 'During World War II, the English mathematical genius Alan Turing tries to crack the German Enigma code with help from fellow mathematicians.', 'theImitationGame.jpg', '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube-nocookie.com/embed/nuPZUUED5uk\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>'),
+(3, 'Inception', '2010-07-13', 'A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.', 'inception.jpg', '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube-nocookie.com/embed/YoHD9XEInc0\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>');
 
 --
 -- Begrænsninger for dumpede tabeller
