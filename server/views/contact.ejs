@@ -12,6 +12,8 @@
 
 	<!-- css link -->
 	<link rel="stylesheet" href="/css/style.css">
+
+	<!-- css link - Contact Form -->
 	<link rel="stylesheet" href="/css/form.css">
 
 	<!-- Font Awesome link -->
@@ -26,51 +28,53 @@
 
 			<h1 id="contactH1">Contact Us</h1>
 
-			<form id="contactForm" method="post">
-				<div class="contactFormField">
+			<div id="formSectionContainer">
+				<form id="contactForm" method="post">
+					<div class="contactFormField">
+							<input 
+								class="contactFormInput"
+								name="name" 
+								type="text"  
+								placeholder="Full name"
+								value="<%= typeof values != 'undefined' ? values.name: '' %>"
+							>
+					</div>
+
+					<div class="contactFormField">
 						<input 
 							class="contactFormInput"
-							name="name" 
+							name="email" 
 							type="text"  
-							placeholder="Full name"
-							value="<%= typeof values != 'undefined' ? values.name: '' %>"
+							placeholder="Email"
+							value="<%= typeof values != 'undefined' ? values.email: '' %>"
 						>
-				</div>
+					</div>
 
-				<div class="contactFormField">
-					<input 
-						class="contactFormInput"
-						name="email" 
-						type="text"  
-						placeholder="Email"
-						value="<%= typeof values != 'undefined' ? values.email: '' %>"
-					>
-				</div>
+					<div class="contactFormField">
+						<input 
+							class="contactFormInput"
+							name="subject" 
+							type="text"  
+							placeholder="Subject"
+							value="<%= typeof values != 'undefined' ? values.subject: '' %>"
+						>
+					</div>
 
-				<div class="contactFormField">
-					<input 
-						class="contactFormInput"
-						name="subject" 
-						type="text"  
-						placeholder="Subject"
-						value="<%= typeof values != 'undefined' ? values.subject: '' %>"
-					>
-				</div>
+					<div class="contactFormField">
+						<textarea class="contactFormTxtArea" name="message" placeholder="Write your message here"><%= typeof values != 'undefined' ? values.message : '' %></textarea>
+					</div>
 
-				<div class="contactFormField">
-					<textarea class="contactFormTxtArea" name="message" placeholder="Write your message here"><%= typeof values != 'undefined' ? values.message : '' %></textarea>
-				</div>
-
-				<button id="sendButton" type="submit">Send</button>
-			</form> <!-- #ContactForm end -->
-			
-			<% if( typeof return_messages != 'undefined'){ %>
-				<div id="returnMessageContainer">
-					<% return_messages.forEach(return_message => { %>
-						<%= return_message %><span class="exclamationMark">!</span><br>
-					<% }) %> <!-- return_messages.forEach end -->
-				</div> <!-- #returnMessageContainer -->
-			<% } %>
+					<button id="sendButton" type="submit">Send</button>
+				</form> <!-- #ContactForm end -->
+				
+				<% if( typeof return_messages != 'undefined'){ %>
+					<div id="returnMessageContainer">
+						<% return_messages.forEach(return_message => { %>
+							<%= return_message %><span class="exclamationMark">!</span><br>
+						<% }) %> <!-- return_messages.forEach end -->
+					</div> <!-- #returnMessageContainer -->
+				<% } %>
+			</div> <!-- #formSectionContainer END -->
 
 		</main>
 
