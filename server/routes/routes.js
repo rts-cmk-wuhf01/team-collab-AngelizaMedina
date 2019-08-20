@@ -75,32 +75,32 @@ module.exports = (app) => {
 
 		// Check if 'name' has been filled out
 		if (typeof name == 'undefined' || name == ''){
-			return_messages.push('Please provide your name');
+			return_messages.push('"Name" field has been left empty');
 		} 
 
 		// Check if 'name' contains any numbers
 		if (name.match(numbers)){
-			return_messages.push('Numbers in the name field is not allowed');
+			return_messages.push('"Name" field must not contain any numbers');
 		}
 		
 		// Check if 'email' has been filled out
 		if (typeof email == 'undefined' || email == ''){
-			return_messages.push('Please provide your email');
+			return_messages.push('"Email" field has been left empty');
 		}
 
 		// Check if the 'email' is valid
 		if(atpos < 1 || dotpos < atpos + 2 || email.length <= dotpos + 2){
-			return_messages.push('Please provide a valid email');
+			return_messages.push('Please provide a valid "Email"');
 		}
 
 		// Check if 'subject' has been filled out
 		if(typeof subject == 'undefined' || subject == ''){
-			return_messages.push('Please provide a subject');
+			return_messages.push('"Subject" field has been left empty');
 		}
 
 		// Check if 'message' has been filled out
 		if(typeof message == 'undefined' || message == ''){
-			return_messages.push('Please write a message');
+			return_messages.push('"Message" field has been left empty');
 		}
 
 		// Don't send the message to the database if any of the above statements are true
