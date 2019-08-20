@@ -1,0 +1,51 @@
+
+@charset "UTF-8";
+/* CSS Document */
+
+.contactFormField{
+	margin: 1% 0;
+}
+
+.contactFormInput, .contactFormTxtArea, .contactFormTxtArea{
+	padding: 1%;
+	font-size: 1em;
+}
+
+.contactFormInput, .contactFormTxtArea{
+	width: 30%;
+}
+
+.contactFormInput{
+	height: 25px;
+}
+
+.contactFormTxtArea{
+	resize: none;
+	width: 60%;
+	height: 250px;
+	font-family: 'Roboto', sans-serif;
+}
+
+#sendButton{
+	width: 10%;
+	height: 25px;
+}
+
+#returnMessageContainer{
+	display: inline-block;
+	width: 60%;
+	margin: 2% 0;
+	padding: 1%;
+	font-size: .9em;
+	border: 1px solid rgb(255, 0, 0);
+	line-height: 30px;
+}
+
+.exclamationMark{
+	margin-left: 15px;
+	font-size: 2em;
+	font-weight: bold;
+}
+
+
+

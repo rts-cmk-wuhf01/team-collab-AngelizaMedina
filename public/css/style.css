@@ -27,7 +27,10 @@ p{
 }
 
 #wrapper{
+<<<<<<< HEAD
 	/* background-color: black; */
+=======
+>>>>>>> upstream/master
 	margin: 0 auto;
 	max-width: 1200px;
 }

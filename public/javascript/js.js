@@ -7,5 +7,5 @@ document.addEventListener ("DOMContentLoaded", () => {
 	console.log('tester');
 
 
-}); //Ends DOMContentLoaded event
+}); //Ends DOMContentLoaded event 
 	
