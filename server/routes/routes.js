@@ -65,7 +65,7 @@ module.exports = (app) => {
 		
 		db.end();
 
-	}); //app.get('/'.. end)	
+	}); //app.get('/search/:searchInput'.. end)	
 
 	/*---------------------------------------------- Search + searchInput end -------------------------------------------*/
 
