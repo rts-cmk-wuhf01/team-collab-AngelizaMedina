@@ -119,14 +119,16 @@ module.exports = (app) => {
 					message_name,
 					message_email,
 					message_subject,
-					message_message
+					message_message,
+					message_date_time
 				) 
 				VALUES 
-					(?, ?, ?, ?)`, [
+					(?, ?, ?, ?, ?)`, [
 						name,
 						email,
 						subject,
-						message
+						message,
+						dateTime
 					]
 			);
 		
