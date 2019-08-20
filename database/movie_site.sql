@@ -2,10 +2,10 @@
 -- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Aug 19, 2019 at 07:51 AM
--- Server version: 10.1.30-MariaDB
--- PHP Version: 7.2.1
+-- Vært: 127.0.0.1
+-- Genereringstid: 20. 08 2019 kl. 07:49:56
+-- Serverversion: 10.1.30-MariaDB
+-- PHP-version: 7.2.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `messages`
+-- Struktur-dump for tabellen `messages`
 --
 
 CREATE TABLE `messages` (
@@ -33,13 +33,14 @@ CREATE TABLE `messages` (
   `message_name` varchar(100) CHARACTER SET utf8 NOT NULL,
   `message_email` varchar(100) CHARACTER SET utf8 NOT NULL,
   `message_subject` varchar(100) CHARACTER SET utf8 NOT NULL,
-  `message_message` varchar(500) CHARACTER SET utf8 NOT NULL
+  `message_message` varchar(500) CHARACTER SET utf8 NOT NULL,
+  `message_date_time` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `movies`
+-- Struktur-dump for tabellen `movies`
 --
 
 CREATE TABLE `movies` (
@@ -52,36 +53,45 @@ CREATE TABLE `movies` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Indexes for dumped tables
+-- Data dump for tabellen `movies`
+--
+
+INSERT INTO `movies` (`movie_id`, `movie_title`, `movie_premier_date`, `movie_resume`, `movie_img`, `movie_trailer`) VALUES
+(1, 'Edge of Tomorrow', '2014-05-28', 'A soldier fighting aliens gets to relive the same day over and over again, the day restarting every time he dies.', 'edgeOfTomorrow.jpg', 'Dummy Data'),
+(2, 'The Imitation Game', '2014-08-29', 'During World War II, the English mathematical genius Alan Turing tries to crack the German Enigma code with help from fellow mathematicians.', 'theImitationGame.jpg', 'Dummy Data'),
+(3, 'Inception', '2010-07-13', 'A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.', 'inception.jpg', 'Dummy Data');
+
+--
+-- Begrænsninger for dumpede tabeller
 --
 
 --
--- Indexes for table `messages`
+-- Indeks for tabel `messages`
 --
 ALTER TABLE `messages`
   ADD PRIMARY KEY (`message_id`);
 
 --
--- Indexes for table `movies`
+-- Indeks for tabel `movies`
 --
 ALTER TABLE `movies`
   ADD PRIMARY KEY (`movie_id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- Brug ikke AUTO_INCREMENT for slettede tabeller
 --
 
 --
--- AUTO_INCREMENT for table `messages`
+-- Tilføj AUTO_INCREMENT i tabel `messages`
 --
 ALTER TABLE `messages`
   MODIFY `message_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `movies`
+-- Tilføj AUTO_INCREMENT i tabel `movies`
 --
 ALTER TABLE `movies`
-  MODIFY `movie_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `movie_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
