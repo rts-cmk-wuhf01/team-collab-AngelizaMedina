@@ -35,6 +35,20 @@ module.exports = (app) => {
 
 	/*------------------------------------------------------ Info end ---------------------------------------------------*/
 
+	/*------------------------------------------------------- Search ----------------------------------------------------*/
+	
+	app.get('/search', async (req, res, next) => {
+
+		let db = await mysql.connect();
+
+		res.render('search');
+		
+		db.end();
+
+	}); //app.get('/'.. end)	
+
+	/*------------------------------------------------------ Search end -------------------------------------------------*/
+
 	/*------------------------------------------------------ Contact ----------------------------------------------------*/
 
 	app.get('/contact', async (req, res, next) => {
@@ -68,11 +82,11 @@ module.exports = (app) => {
 		let return_messages = [];
 
 
-		//Variables to validate the different fields in the 'Contact' form
+		// Variables to validate the different fields in the 'Contact' form
 
-		const numbers = /^[0-9]+$/; //All the numbers from 0-9
-		var atpos = email.indexOf("@"); //To check if the @ is placed correctly
-	 	var dotpos = email.lastIndexOf("."); //To check if the last . is placed correctly
+		const numbers = /^[0-9]+$/; // All the numbers from 0-9
+		var atpos = email.indexOf("@"); // To check if the @ is placed correctly
+	 	var dotpos = email.lastIndexOf("."); // To check if the last . is placed correctly
 
 
 		// Check if 'name' has been filled out
