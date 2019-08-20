@@ -47,7 +47,25 @@ module.exports = (app) => {
 
 	}); //app.get('/'.. end)	
 
-	/*------------------------------------------------------ Search end -------------------------------------------------*/
+	/*---------------------------------------------------- Search end ---------------------------------------------------*/
+
+	/*------------------------------------------------ Search + searchInput ---------------------------------------------*/
+
+	app.get('/search/:searchInput', async (req, res, next) => {
+
+		let db = await mysql.connect();
+
+		let searchResults = await getSearchResults(req.params.searchInput);
+
+		res.render('search', {
+			'searchResults': searchResults
+		});
+		
+		db.end();
+
+	}); //app.get('/'.. end)	
+
+	/*---------------------------------------------- Search + searchInput end -------------------------------------------*/
 
 	/*------------------------------------------------------ Contact ----------------------------------------------------*/
 
@@ -62,6 +80,8 @@ module.exports = (app) => {
 	}); //app.get('/'.. end)
 
 	/*----------------------------------------------------- Contact end -------------------------------------------------*/
+
+	/*---------------------------------------------------- Contact (POST) -----------------------------------------------*/
 
 	app.post('/contact', async (req, res, next) => {
 
@@ -180,5 +200,32 @@ module.exports = (app) => {
 		
 	}); // app.post('/contact'...) END
 
+	/*------------------------------------------------ Contact (POST) end -----------------------------------------------*/
+
+
 
 } //module.exports END
+
+
+/*======================================================= Functions ===================================================*/
+
+async function getSearchResults(searchInput) {
+	let db = await mysql.connect();
+	let [searchResults] = await db.execute(`
+
+		SELECT 
+    movie_id,
+		movie_title,
+		movie_resume
+        
+ 		FROM movies 
+ 
+		WHERE 
+		movie_title LIKE '%?%'
+ 		OR
+		movie_resume LIKE '%?%'
+
+		`, [searchInput]);
+	db.end();
+	return searchResults;
+}

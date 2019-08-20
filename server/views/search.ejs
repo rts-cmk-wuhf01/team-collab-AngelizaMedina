@@ -14,6 +14,7 @@
 	<link rel="stylesheet" href="/css/style.css">
 
 	<!-- css link - Contact Form -->
+	<link rel="stylesheet" href="/css/search.css">
 	<link rel="stylesheet" href="/css/info.css">
 
 	<!-- Font Awesome link -->
@@ -25,6 +26,23 @@
 	<div id="wrapper">
 
 		<main>
+
+			<div id="searchSection">
+				<h1 id="searchH1">Search</h1>
+
+				<form id="searchForm">
+					<div id="searchFormField">
+						<input 
+							id="searchFormInput"
+							name="search" 
+							type="text"  
+							value="<%= typeof values != 'undefined' ? values.search: '' %>"
+						>
+						<i id="searchIcon" class="fas fa-search"></i>
+					</div>
+				</form> <!-- #searchForm END -->
+			</div> <!-- #searchSection END -->
+
 			<% if(typeof searchResults != 'undefined') { %>
 					<% searchResults.forEach(searchResult => { %>
 						<div id="outerBox">

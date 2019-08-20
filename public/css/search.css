@@ -1,0 +1,25 @@
+
+@charset "UTF-8";
+/* CSS Document */
+
+#searchSection{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 3% 0 2% 0;
+	color: #1d1d1d;
+}
+
+#searchH1{
+	text-transform: uppercase;
+	margin-right: 3%;
+}
+
+#searchFormInput{
+	width: 300px;
+	height: 30px;
+}
+
+#searchIcon{
+	font-size: 1.4em;
+}
