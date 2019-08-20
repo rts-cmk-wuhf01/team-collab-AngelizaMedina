@@ -23,8 +23,11 @@ module.exports = (app) => {
 	app.get('/info/:movie_id', async (req, res, next) => {
 
 		let db = await mysql.connect();
+		let [info] = await db.execute('SELECT * FROM movies');
 
-		res.render('info');
+		res.render('info', {
+			'info': info
+		});
 		
 		db.end();
 
