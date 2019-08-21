@@ -8,10 +8,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-	<title>Movive info - Contact</title>
+	<title>Movie info - Contact</title>
 
 	<!-- css link -->
 	<link rel="stylesheet" href="/css/style.css">
+
+	<!-- css link - Contact Form -->
+	<link rel="stylesheet" href="/css/form.css">
 
 	<!-- Font Awesome link -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" 
@@ -22,6 +25,77 @@
 	<div id="wrapper">
 
 		<main>
+
+			<h1 id="contactH1">Contact Us</h1>
+
+			<div id="formSectionContainer">
+				<form id="contactForm" method="post">
+					<div class="contactFormField">
+							<input 
+								class="contactFormInput"
+								name="name" 
+								type="text"  
+								placeholder="Name"
+								value="<%= typeof values != 'undefined' ? values.name: '' %>"
+							>
+					</div>
+
+					<div class="contactFormField">
+						<input 
+							class="contactFormInput"
+							name="surname" 
+							type="text"  
+							placeholder="Surname"
+							value="<%= typeof values != 'undefined' ? values.surname: '' %>"
+						>
+					</div>
+
+					<div class="contactFormField">
+						<input 
+							class="contactFormInput"
+							name="email" 
+							type="text"  
+							placeholder="Email"
+							value="<%= typeof values != 'undefined' ? values.email: '' %>"
+						>
+					</div>
+
+					<div class="contactFormField">
+						<input 
+							class="contactFormInput"
+							name="subject" 
+							type="text"  
+							placeholder="Subject"
+							value="<%= typeof values != 'undefined' ? values.subject: '' %>"
+						>
+					</div>
+
+					<div class="contactFormField">
+						<textarea class="contactFormTxtArea" name="message" placeholder="Write your message here"><%= typeof values != 'undefined' ? values.message : '' %></textarea>
+					</div>
+
+					<button id="sendButton" type="submit">Send</button>
+				</form> <!-- #ContactForm end -->
+				
+				<% if( typeof return_messages != 'undefined'){ %>
+					<div id="returnMessageContainer">
+
+						<% if( typeof return_message_h1 != 'undefined'){ %>
+							<h1 id="returnMessageH1"><%= return_message_h1 %></h1>
+						<% } %>
+
+						<% if( typeof return_message_h2 != 'undefined'){ %>
+							<h2 id="returnMessageH2"><%= return_message_h2 %></h1>
+						<% } %>
+
+						<ul>
+							<% return_messages.forEach(return_message => { %>
+								<li><%= return_message %><span class="exclamationMark">!</span><br></li>
+							<% }) %> <!-- return_messages.forEach end -->
+						</ul>
+					</div> <!-- #returnMessageContainer -->
+				<% } %> <!-- if( typeof return_messages END) -->
+			</div> <!-- #formSectionContainer END -->
 
 		</main>
 
