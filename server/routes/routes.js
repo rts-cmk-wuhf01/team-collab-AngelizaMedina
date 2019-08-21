@@ -9,10 +9,12 @@ module.exports = (app) => {
 	app.get('/', async (req, res, next) => {
 
 		let db = await mysql.connect();
-
-		res.render('index');
-		
+		let [movies] = await db.execute('SELECT * FROM movies');
 		db.end();
+		
+		res.render('index', {
+		   'movies': movies
+		});
 
 	}); //app.get('/'.. end)
 
