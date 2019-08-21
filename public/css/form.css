@@ -3,8 +3,10 @@
 /* CSS Document */
 
 #contactH1{
-	margin: 2% 0;
+	margin: 1% 0;
+	padding: 1%;
 	text-transform: uppercase;
+	color: #1d1d1d;
 }
 
 #formSectionContainer{
@@ -12,7 +14,7 @@
 	padding: 1%;
 	border: solid 1px #d4d4d4;
 	border-radius: 5px;
-	box-shadow: 3px 3px 10px 3px #d4d4d4;
+	box-shadow: 0px 10px 20px #00000029;
 	color: #1d1d1d;
 }
 
