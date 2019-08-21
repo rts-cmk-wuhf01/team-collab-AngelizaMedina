@@ -1,6 +1,8 @@
 
 const mysql = require('../config/mysql');
 
+const date = require('date-and-time');
+
 module.exports = (app) => {
 
 
@@ -9,11 +11,23 @@ module.exports = (app) => {
 	app.get('/', async (req, res, next) => {
 
 		let db = await mysql.connect();
-		let [movies] = await db.execute('SELECT * FROM movies');
+		
+		let [movies] = await db.execute(`
+		   SELECT
+			  movie_id,
+			  movie_title,
+			  movie_img,
+			  movie_resume,
+			  movie_genre
+		   FROM movies 
+		`);
+
+
+	 
 		db.end();
 		
 		res.render('index', {
-		   'movies': movies
+		   'movies': movies,
 		});
 
 	}); //app.get('/'.. end)
