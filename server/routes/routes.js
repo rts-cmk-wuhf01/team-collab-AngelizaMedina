@@ -20,7 +20,7 @@ module.exports = (app) => {
 
 	/*-------------------------------------------------------- Info -----------------------------------------------------*/
 
-	app.get('/info/:movie_id', async (req, res, next) => {
+	app.get('/info', async (req, res, next) => {
 
 		let db = await mysql.connect();
 		let [info] = await db.execute('SELECT * FROM movies');
@@ -36,36 +36,30 @@ module.exports = (app) => {
 	/*------------------------------------------------------ Info end ---------------------------------------------------*/
 
 	/*------------------------------------------------------- Search ----------------------------------------------------*/
-	
+
 	app.get('/search', async (req, res, next) => {
 
-		let db = await mysql.connect();
+		if(req.query.length === 0){
 
-		res.render('search');
-		
-		db.end();
+			res.render('search');
 
-	}); //app.get('/'.. end)	
+		}else{
 
-	/*---------------------------------------------------- Search end ---------------------------------------------------*/
+			let db = await mysql.connect();
 
-	/*------------------------------------------------ Search + searchInput ---------------------------------------------*/
+			let searchInput = req.query.search;
 
-	app.get('/search/:searchInput', async (req, res, next) => {
+			let searchResults = await getSearchResults(searchInput);
 
-		let db = await mysql.connect();
+			res.render('search', {
+				'searchResults': searchResults
+			});
+			
+			db.end();
 
-		let searchInput = req.body.search;
+		} //else end
 
-		let searchResults = await getSearchResults(searchInput);
-
-		res.render('search', {
-			'searchResults': searchResults
-		});
-		
-		db.end();
-
-	}); //app.get('/search/:searchInput'.. end)	
+	}); //app.get('/search..) end)	
 
 	/*---------------------------------------------- Search + searchInput end -------------------------------------------*/
 
@@ -212,22 +206,27 @@ module.exports = (app) => {
 /*======================================================= Functions ===================================================*/
 
 async function getSearchResults(searchInput) {
+
+	let searchInputParam = '%' + searchInput + '%';
+
 	let db = await mysql.connect();
 	let [searchResults] = await db.execute(`
 
 		SELECT 
     movie_id,
 		movie_title,
+		movie_img,
+		movie_trailer,
 		movie_resume
         
  		FROM movies 
  
 		WHERE 
-		movie_title LIKE %?%
+		movie_title LIKE ?
 		OR
-		movie_resume LIKE %?%
+		movie_resume LIKE ? 
 
-	`, [searchInput]);
+	`, [searchInputParam, searchInputParam]);
 
 	db.end();
 	return searchResults;

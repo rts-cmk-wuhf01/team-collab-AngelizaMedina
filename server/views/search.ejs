@@ -30,12 +30,13 @@
 			<div id="searchSection">
 				<h1 id="searchH1">Search</h1>
 
-				<form id="searchForm">
+				<form id="searchForm" method="get" action="/search">
 					<div id="searchFormField">
 						<input 
 							id="searchFormInput"
 							name="search" 
 							type="text"  
+							placeholder="Search for title or part of resume"
 							value="<%= typeof values != 'undefined' ? values.search: '' %>"
 						>
 						<i id="searchIcon" class="fas fa-search"></i>
@@ -64,6 +65,7 @@
 						</div> <!-- #outerBox END -->
 					<% }) %> <!-- searchResults.forEach END -->
 			<% } %> <!-- if(typeof searchResults...) END -->
+
 		</main>
 
 		<footer>
