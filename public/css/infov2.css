@@ -1,0 +1,66 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/*Overall stuff*/
+html{
+	overflow-y: scroll;
+	-moz-scrollbars: vertical;
+	font-family: 'Roboto', sans-serif;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+p{
+	padding-bottom: 1em;
+	font-size: .9em;
+}
+
+#wrapper{
+	/* background-color: black; */
+	margin: 0 auto;
+	max-width: 1200px;
+}
+/*Overall stuff end*/
+
+/*INFOv2*/
+
+#outerBoxv2 {
+	margin: 150px auto;
+	display: flex;
+	box-shadow: 0px 10px 20px #00000029;
+	height: 600px;
+}
+
+#moviePosterv2 {
+	width: 40%;
+}
+
+#moviePosterv2 img {
+	height: 100%;
+}
+
+#innerBoxv2 {
+	width: 50%;
+	margin: 0 auto;
+}
+
+#movieTrailerv2 {
+	width: 100%;
+	margin-top: 35px;
+}
+
+#movieTextv2 {
+	padding-top: 20px;
+}
+
+/*INFOv2 END*/

@@ -50,6 +50,39 @@
 					<% }) %>
 						
 					<% } %>
+
+					<% if(typeof info != 'undefined') { %>
+			
+					<% info.forEach(info => { %>
+
+					<div id="outerBoxv2">
+				
+						<div id="moviePosterv2">
+							<img src="/images/movie_posters/<%= info.movie_img %>">
+						</div>
+			
+						<div id="innerBoxv2">
+			
+							<div id="movieTrailerv2">
+								<%- info.movie_trailer %>
+							</div>
+			
+							<div id="movieTextv2">
+								<h3><%= info.movie_title %></h3>
+								<p><%= info.movie_resume %></p>		
+								<!-- <i><p id="movieDate">Release date: <%= info.movie_premier_date %></p></i> -->
+								<p id="movieDate">Release date: <i>16 July 1988</i></p>
+								<p id="movieDirector">Director: <i>Katsuhiro Ôtomo</i></p>
+								<p id="movieCast">Cast: <i>Mitsuo Iwata, Nozomu Sasaki, Mami Koyama...</i></p>
+							</div>
+			
+						</div>
+			
+					</div>
+
+					<% }) %>
+						
+					<% } %>
 		</main>
 
 		<footer>
