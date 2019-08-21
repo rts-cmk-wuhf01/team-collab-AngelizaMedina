@@ -11,6 +11,7 @@
 	<title>Movie info - Info</title>
 
 	<!-- css link --> 
+	<link rel="stylesheet" href="/css/index.css">
 	<link rel="stylesheet" href="/css/info.css">
 
 	<!-- Font Awesome link -->
@@ -20,6 +21,7 @@
 
 <body>
 	<div id="wrapper"> 
+		<%- include('partials/header') %>
 
 		<main>
 			<% if(typeof chosenMovie != 'undefined') { %>
