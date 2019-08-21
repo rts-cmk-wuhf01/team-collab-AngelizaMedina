@@ -59,10 +59,11 @@
 								<div id="innerMovieText">
 									<h3><%= searchResult.movie_title %></h3>
 									<p><%= searchResult.movie_resume %></p>
-									<a href="#">Read more  <i class="fas fa-chevron-circle-right"></i></a>
+									<a href="http://localhost:3000/info/<%= searchResult.movie_id %>">Read more  <i class="fas fa-chevron-circle-right"></i></a>
 								</div>
 							</div>
 						</div> <!-- #outerBox END -->
+
 					<% }) %> <!-- searchResults.forEach END -->
 			<% } %> <!-- if(typeof searchResults...) END -->
 
