@@ -22,67 +22,32 @@
 	<div id="wrapper"> 
 
 		<main>
-
-					<% if(typeof info != 'undefined') { %>
-			
-					<% info.forEach(info => { %>
-
-					<div id="outerBox">
-
-						<div id="moviePoster">
-							<img src="/images/movie_posters/<%= info.movie_img %>">
-						</div>
-
-						<div id="movieTrailer">
-							<%- info.movie_trailer %>
-						</div>
-
-						<div id="movieText">
-							<div id="innerMovieText">
-								<h3><%= info.movie_title %></h3>
-								<p><%= info.movie_resume %></p>
-								<a href="#">Read more  <i class="fas fa-chevron-circle-right"></i></a>
-							</div>
-						</div>
-
-					</div>
-				
-					<% }) %>
-						
-					<% } %>
-
-					<% if(typeof info != 'undefined') { %>
-			
-					<% info.forEach(info => { %>
-
+			<% if(typeof chosenMovie != 'undefined') { %>
+				<% chosenMovie.forEach(chosenMovie => { %>
+					<% let premierDate = new Date(chosenMovie.movie_premier_date); %>
 					<div id="outerBoxv2">
-				
 						<div id="moviePosterv2">
-							<img src="/images/movie_posters/<%= info.movie_img %>">
+							<img src="/images/movie_posters/<%= chosenMovie.movie_img %>">
 						</div>
 			
 						<div id="innerBoxv2">
-			
 							<div id="movieTrailerv2">
-								<%- info.movie_trailer %>
+								<%- chosenMovie.movie_trailer %>
 							</div>
 			
 							<div id="movieTextv2">
-								<h3><%= info.movie_title %></h3>
-								<p><%= info.movie_resume %></p>		
-								<!-- <i><p id="movieDate">Release date: <%= info.movie_premier_date %></p></i> -->
-								<p id="movieDate">Release date: <i>16 July 1988</i></p>
+								<h3><%= chosenMovie.movie_title %></h3>
+								<p><%= chosenMovie.movie_resume %></p>		
+								
+								<!-- 16 July 1988 -->
+								<p id="movieDate">Release date: <i><time><%= dateAndTime.format(premierDate, 'DD MMMM YYYY') %></time></i></p>
 								<p id="movieDirector">Director: <i>Katsuhiro Ôtomo</i></p>
 								<p id="movieCast">Cast: <i>Mitsuo Iwata, Nozomu Sasaki, Mami Koyama...</i></p>
 							</div>
-			
 						</div>
-			
 					</div>
-
-					<% }) %>
-						
-					<% } %>
+				<% }) %>
+			<% } %> <!-- if(typeof chosenMovie...) end -->
 		</main>
 
 		<footer>

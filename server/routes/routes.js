@@ -39,10 +39,11 @@ module.exports = (app) => {
 	app.get('/info/:movie_id', async (req, res, next) => {
 
 		let db = await mysql.connect();
-		let [info] = await db.execute('SELECT * FROM movies');
+
+		let chosenMovie = await getChosenMovie(req.params.movie_id);
 
 		res.render('info', {
-			'info': info
+			'chosenMovie': chosenMovie
 		});
 		
 		db.end();
@@ -51,22 +52,33 @@ module.exports = (app) => {
 
 	/*------------------------------------------------------ Info end ---------------------------------------------------*/
 
-	/*------------------------------------------------------ Info.v2 end ---------------------------------------------------*/
+	/*------------------------------------------------------- Search ----------------------------------------------------*/
 
-	// app.get('/infov2', async (req, res, next) => {
+	app.get('/search', async (req, res, next) => {
 
-	// 	let db = await mysql.connect();
-	// 	let [infov2] = await db.execute('SELECT * FROM movies');
+		if(req.query.search == undefined || req.query.search == ''){
 
-	// 	res.render('infov2'
-	// 		'infov2': infov2
-	// 	);
+			res.render('search');
 
-	// 	db.end();
+		}else{
 
-	// }); //app.get('/'.. end)
+			let db = await mysql.connect();
 
-	/*------------------------------------------------------ Info.v2 end ---------------------------------------------------*/
+			let searchInput = req.query.search;
+
+			let searchResults = await getSearchResults(searchInput);
+
+			res.render('search', {
+				'searchResults': searchResults
+			});
+			
+			db.end();
+
+		} //else end
+
+	}); //app.get('/search..) end)	
+
+	/*---------------------------------------------- Search + searchInput end -------------------------------------------*/
 
 	/*------------------------------------------------------ Contact ----------------------------------------------------*/
 
@@ -81,6 +93,8 @@ module.exports = (app) => {
 	}); //app.get('/'.. end)
 
 	/*----------------------------------------------------- Contact end -------------------------------------------------*/
+
+	/*---------------------------------------------------- Contact (POST) -----------------------------------------------*/
 
 	app.post('/contact', async (req, res, next) => {
 
@@ -101,11 +115,11 @@ module.exports = (app) => {
 		let return_messages = [];
 
 
-		//Variables to validate the different fields in the 'Contact' form
+		// Variables to validate the different fields in the 'Contact' form
 
-		const numbers = /^[0-9]+$/; //All the numbers from 0-9
-		var atpos = email.indexOf("@"); //To check if the @ is placed correctly
-	 	var dotpos = email.lastIndexOf("."); //To check if the last . is placed correctly
+		const numbers = /^[0-9]+$/; // All the numbers from 0-9
+		var atpos = email.indexOf("@"); // To check if the @ is placed correctly
+	 	var dotpos = email.lastIndexOf("."); // To check if the last . is placed correctly
 
 
 		// Check if 'name' has been filled out
@@ -199,5 +213,64 @@ module.exports = (app) => {
 		
 	}); // app.post('/contact'...) END
 
+	/*------------------------------------------------ Contact (POST) end -----------------------------------------------*/
+
+
 
 } //module.exports END
+
+
+/*======================================================= Functions ===================================================*/
+
+async function getChosenMovie(movie_id){
+
+	let db = await mysql.connect();
+	let [chosenMovie] = await db.execute(`
+
+		SELECT
+		movie_id,
+		movie_title,
+		movie_premier_date,
+		movie_img,
+		movie_trailer,
+		movie_resume,
+		movie_genre,
+		movie_scene
+        
+ 		FROM movies 
+ 
+		WHERE 
+		movie_id = ?
+
+	`, [movie_id]);
+
+	db.end();
+	return chosenMovie;
+}
+
+async function getSearchResults(searchInput) {
+
+	let searchInputParam = '%' + searchInput + '%';
+
+	let db = await mysql.connect();
+	let [searchResults] = await db.execute(`
+
+		SELECT 
+    movie_id,
+		movie_title,
+		movie_img,
+		movie_trailer,
+		movie_resume
+        
+ 		FROM movies 
+ 
+		WHERE 
+		movie_title LIKE ?
+		OR
+		movie_resume LIKE ? 
+
+	`, [searchInputParam, searchInputParam]);
+
+	db.end();
+	return searchResults;
+}

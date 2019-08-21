@@ -1,0 +1,55 @@
+
+@charset "UTF-8";
+/* CSS Document */
+
+#searchSection{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 3% 0 2% 0;
+	color: #1d1d1d;
+}
+
+#searchH1{
+	text-transform: uppercase;
+	margin-right: 3%;
+}
+
+/*-------------------------------------------------- Form -----------------------------------------------*/
+
+#searchFormField{
+	background-color: #ebca4a;
+}
+
+#searchFormInput{
+	width: 400px;
+	height: 40px;
+	padding: 0 1%;
+}
+
+#searchButton{
+	cursor: pointer;
+	margin-right: 15px;
+	background-color: transparent;
+	border: none;
+}
+
+#searchIcon{
+	text-align: center;
+	font-size: 1.5em;
+}
+
+/*----------------------------------------------- Form END --------------------------------------------------*/
+
+#resultSection{
+	margin: 5% 0;
+}
+
+#outerBox{
+	margin: 3% 0;
+}
+
+#resultH2{
+	text-transform: uppercase;
+	font-size: 1.6em;
+}

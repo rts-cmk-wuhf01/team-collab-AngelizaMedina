@@ -2,10 +2,10 @@
 -- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
--- Vært: 127.0.0.1
--- Genereringstid: 20. 08 2019 kl. 08:22:00
--- Serverversion: 10.1.30-MariaDB
--- PHP-version: 7.2.1
+-- Host: 127.0.0.1
+-- Generation Time: Aug 20, 2019 at 03:02 PM
+-- Server version: 10.1.30-MariaDB
+-- PHP Version: 7.2.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,35 +25,36 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur-dump for tabellen `messages`
+-- Table structure for table `messages`
 --
 
 CREATE TABLE `messages` (
   `message_id` int(11) NOT NULL,
-  `message_name` varchar(100) CHARACTER SET utf8 NOT NULL,
-  `message_email` varchar(100) CHARACTER SET utf8 NOT NULL,
-  `message_subject` varchar(100) CHARACTER SET utf8 NOT NULL,
-  `message_message` varchar(500) CHARACTER SET utf8 NOT NULL,
+  `message_name` varchar(100) NOT NULL,
+  `message_surname` varchar(100) NOT NULL,
+  `message_email` varchar(100) NOT NULL,
+  `message_subject` varchar(100) NOT NULL,
+  `message_message` varchar(500) NOT NULL,
   `message_date_time` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Struktur-dump for tabellen `movies`
+-- Table structure for table `movies`
 --
 
 CREATE TABLE `movies` (
   `movie_id` int(11) NOT NULL,
-  `movie_title` varchar(100) CHARACTER SET utf8 NOT NULL,
+  `movie_title` varchar(100) NOT NULL,
   `movie_premier_date` date NOT NULL,
-  `movie_resume` varchar(300) CHARACTER SET utf8 NOT NULL,
-  `movie_img` varchar(100) NOT NULL,
-  `movie_trailer` varchar(300) CHARACTER SET utf8 NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `movie_resume` varchar(300) NOT NULL,
+  `movie_img` varchar(100) CHARACTER SET latin1 NOT NULL,
+  `movie_trailer` varchar(300) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Data dump for tabellen `movies`
+-- Dumping data for table `movies`
 --
 
 INSERT INTO `movies` (`movie_id`, `movie_title`, `movie_premier_date`, `movie_resume`, `movie_img`, `movie_trailer`) VALUES
@@ -62,33 +63,33 @@ INSERT INTO `movies` (`movie_id`, `movie_title`, `movie_premier_date`, `movie_re
 (3, 'Inception', '2010-07-13', 'A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.', 'inception.jpg', '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube-nocookie.com/embed/YoHD9XEInc0\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>');
 
 --
--- Begrænsninger for dumpede tabeller
+-- Indexes for dumped tables
 --
 
 --
--- Indeks for tabel `messages`
+-- Indexes for table `messages`
 --
 ALTER TABLE `messages`
   ADD PRIMARY KEY (`message_id`);
 
 --
--- Indeks for tabel `movies`
+-- Indexes for table `movies`
 --
 ALTER TABLE `movies`
   ADD PRIMARY KEY (`movie_id`);
 
 --
--- Brug ikke AUTO_INCREMENT for slettede tabeller
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- Tilføj AUTO_INCREMENT i tabel `messages`
+-- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
   MODIFY `message_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- Tilføj AUTO_INCREMENT i tabel `movies`
+-- AUTO_INCREMENT for table `movies`
 --
 ALTER TABLE `movies`
   MODIFY `movie_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
