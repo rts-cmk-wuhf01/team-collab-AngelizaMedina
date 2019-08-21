@@ -15,11 +15,41 @@
 	margin-right: 3%;
 }
 
+/*-------------------------------------------------- Form -----------------------------------------------*/
+
+#searchFormField{
+	background-color: #ebca4a;
+}
+
 #searchFormInput{
-	width: 300px;
-	height: 30px;
+	width: 400px;
+	height: 40px;
+	padding: 0 1%;
+}
+
+#searchButton{
+	cursor: pointer;
+	margin-right: 15px;
+	background-color: transparent;
+	border: none;
 }
 
 #searchIcon{
-	font-size: 1.4em;
+	text-align: center;
+	font-size: 1.5em;
+}
+
+/*----------------------------------------------- Form END --------------------------------------------------*/
+
+#resultSection{
+	margin: 5% 0;
+}
+
+#outerBox{
+	margin: 3% 0;
+}
+
+#resultH2{
+	text-transform: uppercase;
+	font-size: 1.6em;
 }

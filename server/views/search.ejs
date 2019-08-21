@@ -14,8 +14,8 @@
 	<link rel="stylesheet" href="/css/style.css">
 
 	<!-- css link - Contact Form -->
-	<link rel="stylesheet" href="/css/search.css">
 	<link rel="stylesheet" href="/css/info.css">
+	<link rel="stylesheet" href="/css/search.css">
 
 	<!-- Font Awesome link -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" 
@@ -27,7 +27,7 @@
 
 		<main>
 
-			<div id="searchSection">
+			<section id="searchSection">
 				<h1 id="searchH1">Search</h1>
 
 				<form id="searchForm" method="get" action="/search">
@@ -36,15 +36,17 @@
 							id="searchFormInput"
 							name="search" 
 							type="text"  
-							placeholder="Search for title or part of resume"
+							placeholder="Search for title or keyword"
 							value="<%= typeof values != 'undefined' ? values.search: '' %>"
 						>
-						<i id="searchIcon" class="fas fa-search"></i>
-					</div>
+						<button type="submit" id="searchButton"><i id="searchIcon" class="fas fa-search"></i></button>
+					</div> <!-- #searchFormField END -->
 				</form> <!-- #searchForm END -->
-			</div> <!-- #searchSection END -->
+			</section> <!-- #searchSection END -->
 
 			<% if(typeof searchResults != 'undefined') { %>
+				<section id="resultSection">
+					<h2 id="resultH2">Results</h2>
 					<% searchResults.forEach(searchResult => { %>
 						<div id="outerBox">
 							<div id="moviePoster">
@@ -63,8 +65,8 @@
 								</div>
 							</div>
 						</div> <!-- #outerBox END -->
-
-					<% }) %> <!-- searchResults.forEach END -->
+					</section>
+				<% }) %> <!-- searchResults.forEach END -->
 			<% } %> <!-- if(typeof searchResults...) END -->
 
 		</main>
