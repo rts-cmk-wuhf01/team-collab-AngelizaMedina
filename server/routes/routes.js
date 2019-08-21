@@ -36,25 +36,6 @@ module.exports = (app) => {
 
 	/*-------------------------------------------------------- Info -----------------------------------------------------*/
 
-	// THIS ROUTE WILL NOT BE USED AFTER THE NEW SINGLE MOVIE PAGE IS DONE. THEREFORE DELETE LATER!!!!!!!!!!!!!!!!!!!!!!
-
-	app.get('/info', async (req, res, next) => {
-
-		let db = await mysql.connect();
-		let [info] = await db.execute('SELECT * FROM movies');
-
-		res.render('info', {
-			'info': info
-		});
-		
-		db.end();
-
-	}); //app.get('/'.. end)
-
-	/*------------------------------------------------------ Info end ---------------------------------------------------*/
-
-	/*--------------------------------------------------- Info/:movie_id ------------------------------------------------*/
-
 	app.get('/info/:movie_id', async (req, res, next) => {
 
 		let db = await mysql.connect();
@@ -69,7 +50,7 @@ module.exports = (app) => {
 
 	}); //app.get('/'.. end)
 
-	/*------------------------------------------------- Info/:movie_id end ----------------------------------------------*/
+	/*------------------------------------------------------ Info end ---------------------------------------------------*/
 
 	/*------------------------------------------------------- Search ----------------------------------------------------*/
 
@@ -249,6 +230,7 @@ async function getChosenMovie(movie_id){
 		SELECT
 		movie_id,
 		movie_title,
+		movie_premier_date,
 		movie_img,
 		movie_trailer,
 		movie_resume,
