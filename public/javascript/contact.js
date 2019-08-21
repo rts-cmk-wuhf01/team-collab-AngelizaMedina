@@ -24,9 +24,8 @@ document.addEventListener ("DOMContentLoaded", () => {
 
 
 		//Page elements
-		let returnMessageH1Element = document.querySelector('#returnMessageH1');
-		let returnMessageH2Element = document.querySelector('#returnMessageH2');
-		let returnMessageElements = document.querySelectorAll('.returnMessage');
+		const returnMessageH1Element = document.querySelector('#returnMessageH1');
+		const returnMessageH2Element = document.querySelector('#returnMessageH2');
 
 		let nameElement = contactFormElement.name;
 		let surnameElement = contactFormElement.surname;
