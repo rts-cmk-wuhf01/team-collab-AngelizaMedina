@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<title>Movie info - Search</title>
+
+	<!-- css link -->
+	<link rel="stylesheet" href="/css/style.css">
+
+	<!-- css link - Contact Form -->
+	<link rel="stylesheet" href="/css/info.css">
+	<link rel="stylesheet" href="/css/search.css">
+
+	<!-- Font Awesome link -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" 
+	integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+</head>
+
+<body>
+	<div id="wrapper">
+
+		<main>
+
+			<section id="searchSection">
+				<h1 id="searchH1">Search</h1>
+
+				<form id="searchForm" method="get" action="/search">
+					<div id="searchFormField">
+						<input 
+							id="searchFormInput"
+							name="search" 
+							type="text"  
+							placeholder="Search for title or keyword"
+							value="<%= typeof values != 'undefined' ? values.search: '' %>"
+						>
+						<button type="submit" id="searchButton"><i id="searchIcon" class="fas fa-search"></i></button>
+					</div> <!-- #searchFormField END -->
+				</form> <!-- #searchForm END -->
+			</section> <!-- #searchSection END -->
+
+			<% if(typeof searchResults != 'undefined') { %>
+				<section id="resultSection">
+					<h2 id="resultH2">Results</h2>
+					<% searchResults.forEach(searchResult => { %>
+						<div id="outerBox">
+							<div id="moviePoster">
+								<img src="/images/movie_posters/<%= searchResult.movie_img %>">
+							</div>
+
+							<div id="movieTrailer">
+								<%- searchResult.movie_trailer %>
+							</div>
+
+							<div id="movieText">
+								<div id="innerMovieText">
+									<h3><%= searchResult.movie_title %></h3>
+									<p><%= searchResult.movie_resume %></p>
+									<a href="http://localhost:3000/info/<%= searchResult.movie_id %>">Read more  <i class="fas fa-chevron-circle-right"></i></a>
+								</div>
+							</div>
+						</div> <!-- #outerBox END -->
+					</section>
+				<% }) %> <!-- searchResults.forEach END -->
+			<% } %> <!-- if(typeof searchResults...) END -->
+
+		</main>
+
+		<footer>
+
+		</footer>
+
+	</div> <!-- #wrapper end -->
+</body>
+
+	<!-- Javascript link -->
+	<script src="/javascript/js.js"></script>
+
+</html>

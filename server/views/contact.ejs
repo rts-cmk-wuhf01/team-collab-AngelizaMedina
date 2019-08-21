@@ -75,7 +75,18 @@
 					</div>
 
 					<button id="sendButton" type="submit">Send</button>
+
 				</form> <!-- #ContactForm end -->
+
+					<div id="returnMessageContainer">
+							<h1 id="returnMessageH1"></h1>
+
+							<h2 id="returnMessageH2"></h1>
+
+						<ul>
+								<li class="returnMessage"><span class="exclamationMark">!</span><br></li>
+						</ul>
+					</div> <!-- #returnMessageContainer -->
 				
 				<% if( typeof return_messages != 'undefined'){ %>
 					<div id="returnMessageContainer">
@@ -90,12 +101,14 @@
 
 						<ul>
 							<% return_messages.forEach(return_message => { %>
-								<li><%= return_message %><span class="exclamationMark">!</span><br></li>
+								<li class="returnMessage"><%= return_message %><span class="exclamationMark">!</span><br></li>
 							<% }) %> <!-- return_messages.forEach end -->
 						</ul>
 					</div> <!-- #returnMessageContainer -->
 				<% } %> <!-- if( typeof return_messages END) -->
 			</div> <!-- #formSectionContainer END -->
+
+			<div id="testContainer"></div>
 
 		</main>
 
@@ -108,5 +121,6 @@
 
 	<!-- Javascript link -->
 	<script src="/javascript/js.js"></script>
+	<script src="/javascript/contact.js"></script>
 
 </html>
