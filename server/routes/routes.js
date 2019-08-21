@@ -59,7 +59,7 @@ module.exports = (app) => {
 
 	app.get('/search', async (req, res, next) => {
 
-		if(req.query.length === 0){
+		if(req.query.search == undefined || req.query.search == ''){
 
 			res.render('search');
 
