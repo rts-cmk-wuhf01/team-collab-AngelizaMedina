@@ -23,8 +23,9 @@ document.addEventListener ("DOMContentLoaded", () => {
 
 		//Page elements
 		const returnMessageContainerClientElement = document.querySelector("#returnMessageContainerClient");
-		const returnMessageH1ClientElement = document.querySelector('#returnMessageH1Client');
-		const returnMessageH2ClientElement = document.querySelector('#returnMessageH2Client');
+		const returnMessageH1ClientElement = document.querySelector("#returnMessageH1Client");
+		const returnMessageH2ClientElement = document.querySelector("#returnMessageH2Client");
+		const redirectMessageContainerElement = document.querySelector("#redirectMessageContainer");
 
 		//Place in the HTML where the cloned element will be placed
 		let returnMessagesListClientElement = document.querySelector ("#returnMessagesListClient");
@@ -140,6 +141,8 @@ document.addEventListener ("DOMContentLoaded", () => {
 			// Give the following message to the user
 			returnMessageH1ClientElement.innerHTML = "Your message has been sent!";
 			returnMessageH2ClientElement.innerHTML = "We will get back to you as soon as possible";
+			redirectMessageContainerElement.style.display = "block";
+			redirectMessageContainerElement.innerHTML = "You will be redirected in less than 5 sec..."
 
 			contactFormElement.submit();
 		}
