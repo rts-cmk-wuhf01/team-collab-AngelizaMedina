@@ -13,7 +13,7 @@
 </header>
 <section class="hero">
 	<% if(typeof movies != 'undefined'){ %>
-		<% movies.slice().forEach(movie =>{ %>
+		<% movies.slice(0, 1).forEach(movie =>{ %>
 		<div class="hero-info">
 			<h1 class="movie-title-big"><%= movie.movie_title %></h1>
 			<p class="movie-genre"><%= movie.movie_genre %></p>

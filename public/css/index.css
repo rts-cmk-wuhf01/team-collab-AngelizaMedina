@@ -15,7 +15,7 @@ body{
 }
 /* <------- Header -------> */
 .hero-image{
-	background: url("../images/movie_scene/goodfellas.jpg");
+	background: url("../images/movie_scene/edgeoftomorrow.jpg");
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
@@ -129,6 +129,9 @@ main{
 }
 .movie-poster{
 	height: 584,5px;
+	width: 100%;
+}
+.movie-preview-text-box{
 	width: 100%;
 }
 .movie-title-preview{

@@ -20,7 +20,7 @@
 
 <body>
 	
-	<div class="hero-image" background="../../public/images/movie_scene/goodfellas.jpg">
+	<div class="hero-image">
         <div class="wrapper">
             <%- include('partials/header') %>
             <main>
@@ -38,9 +38,11 @@
 								<a href="/info/<%= movie.movie_id %>"><div class="overlay">
 									<div class="resume-text"><%= movie.movie_resume %></div>
 								</div></a>
-								<h5 class="movie-title-preview"><%= movie.movie_title %></h5>
-								<p class="movie-genre-preview"><%= movie.movie_genre %></p>
-								<a href="/info/<%= movie.movie_id %>"><button class="more-btn">More</button></a>
+								<div class="movie-preview-text-box">
+									<h5 class="movie-title-preview"><%= movie.movie_title %></h5>
+									<p class="movie-genre-preview"><%= movie.movie_genre %></p>
+									<a href="/info/<%= movie.movie_id %>"><button class="more-btn">More</button></a>
+								</div>
 							</div>
 						<% }); %>
 						<% } %>
