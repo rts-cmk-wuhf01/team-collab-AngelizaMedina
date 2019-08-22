@@ -88,6 +88,7 @@
 
 #returnMessagesListClient{
 	flex-direction: column;
+	padding: 15px;
 }
 
 .returnMessage{

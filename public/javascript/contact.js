@@ -102,6 +102,9 @@ document.addEventListener ("DOMContentLoaded", () => {
 		if(returnMessages.length > 0){
 			event.preventDefault();
 
+			// Empty the element from possibly previous returnMessages
+			returnMessagesListClientElement.innerHTML = "";
+
 			returnMessageContainerClientElement.style.display = "block";
 
 			// Give the following message to the user
