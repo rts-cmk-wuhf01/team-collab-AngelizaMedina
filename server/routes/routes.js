@@ -264,7 +264,7 @@ async function getSearchResults(searchInput) {
 		movie_title,
 		movie_img,
 		movie_trailer,
-		SUBSTRING(movie_resume, 1, 20) AS movie_resume
+		SUBSTRING(movie_resume, 1, 60) AS movie_resume
         
  		FROM movies 
  
