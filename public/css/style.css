@@ -27,8 +27,8 @@ p{
 }
 
 #wrapper{
-	margin: 0 auto;
-	max-width: 1200px;
+	width: 65%;
+    margin: 0 auto;
 }
 /*Overall stuff end*/
 
@@ -56,16 +56,6 @@ img{
 	box-shadow: 4px 4px 6px -2px rgba(0,0,0,0.5);
 	margin-bottom: 10px;
 }
-header{
-	display: flex;
-	justify-content: center;
-}
-nav{
-	background-color: #1a1a1a;
-	height: 50px;
-	width: 100%;
-	text-align: center;
-}
 ul{
 	display: flex;
 	justify-content: center;
@@ -80,7 +70,4 @@ a{
 	text-decoration: none;
 	color: #ffffff;
 	display: inline;
-}
-h1{
-
 }

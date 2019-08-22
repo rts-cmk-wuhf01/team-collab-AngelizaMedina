@@ -9,16 +9,5 @@
 			<li><a href="/contact">Contact Us</a></li>
 		</ul>
 		
-	</nav> 
+	</nav>  
 </header>
-<section class="hero">
-	<% if(typeof movies != 'undefined'){ %>
-		<% movies.slice(0, 1).forEach(movie =>{ %>
-		<div class="hero-info">
-			<h1 class="movie-title-big"><%= movie.movie_title %></h1>
-			<p class="movie-genre"><%= movie.movie_genre %></p>
-			<a href="/info/<%= movie.movie_id %>"><button class="movie-details">Learn More</button></a>
-		</div>
-		<% }); %>
-	<% } %>
-</section>

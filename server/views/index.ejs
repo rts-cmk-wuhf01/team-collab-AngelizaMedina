@@ -10,9 +10,8 @@
 	<title>Movie info - Home</title>
 
 	<!-- css link -->
-    <!-- <link rel="stylesheet" href="css/style.css"> -->
-    <link rel="stylesheet" href="css/index.css">
-
+    <link rel="stylesheet" href="css/header.css">
+	<link rel="stylesheet" href="css/index.css">
 	<!-- Font Awesome link -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" 
 	integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
@@ -22,10 +21,12 @@
 	
 	<div class="hero-image">
         <div class="wrapper">
-            <%- include('partials/header') %>
+			<%- include('partials/header') %>
+			<%- include('partials/hero') %>
             <main>
                 <h2 class="curated-headline">Curated Movie List</h2>
                 <section class="movie-grid">
+					
                     <div class="movie-container">
 
 						<% if(typeof movies != 'undefined'){ %>
