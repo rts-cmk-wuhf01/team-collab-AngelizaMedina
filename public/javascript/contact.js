@@ -13,8 +13,6 @@ document.addEventListener ("DOMContentLoaded", () => {
 		//Reason we prevent is because we want to validate the function before the default event takes place
 		event.preventDefault();
 
-		const returnMessageElement = document.querySelector("#testContainer");
-
 		//Form input values
 		let nameValue = contactFormElement.name.value;
 		let surnameValue = contactFormElement.surname.value;
@@ -24,10 +22,18 @@ document.addEventListener ("DOMContentLoaded", () => {
 
 
 		//Page elements
-		let returnMessageH1Element = document.querySelector('#returnMessageH1');
-		let returnMessageH2Element = document.querySelector('#returnMessageH2');
-		let returnMessageElements = document.querySelectorAll('.returnMessage');
+		const returnMessageContainerClientElement = document.querySelector("#returnMessageContainerClient");
+		const returnMessageH1ClientElement = document.querySelector("#returnMessageH1Client");
+		const returnMessageH2ClientElement = document.querySelector("#returnMessageH2Client");
+		const redirectMessageContainerElement = document.querySelector("#redirectMessageContainer");
 
+		//Place in the HTML where the cloned element will be placed
+		let returnMessagesListClientElement = document.querySelector ("#returnMessagesListClient");
+
+		//The returnMessage li template
+		let returnMessageTemplateElement = document.querySelector ("#returnMessageTemplate .returnMessage");
+
+		// Form Input elements
 		let nameElement = contactFormElement.name;
 		let surnameElement = contactFormElement.surname;
 		let emailElement = contactFormElement.email;
@@ -35,7 +41,7 @@ document.addEventListener ("DOMContentLoaded", () => {
 		let messageElement = contactFormElement.message;
 
 
-		//Place to store the different errors
+		// Variable to store the different errors
 		let returnMessages = [];
 
 
@@ -97,14 +103,46 @@ document.addEventListener ("DOMContentLoaded", () => {
 		if(returnMessages.length > 0){
 			event.preventDefault();
 
-			returnMessageH1Element.innerHTML = "Something went wrong...";
-			returnMessageH2Element.innerHTML = "Check following:";
+			// Empty the element from previous returnMessages
+			returnMessagesListClientElement.innerHTML = "";
+
+			returnMessageContainerClientElement.style.display = "block";
+
+			// Give the following message to the user
+			returnMessageH1ClientElement.innerHTML = "Something went wrong...";
+			returnMessageH2ClientElement.innerHTML = "Check following:";
 
 			returnMessages.forEach(returnMessage => {
-				console.log(returnMessage);
-			})
 
-		}else if (return_messages.length == 0){
+				//The value of productElement changes for everytime the code is executed
+				let returnMessageElement;
+
+				//cloneNode(true), means that the childElements will be cloned too
+				returnMessageElement = returnMessageTemplateElement.cloneNode(true);
+
+				let returnMessageTxt = document.createTextNode(returnMessage);
+
+				// Inserts our cloned HTML element inside our returnMessagesListClientElement (ul)
+				returnMessagesListClientElement.appendChild(returnMessageElement);
+
+				// Insert returnMessageTxt before the styled exclamation mark 
+				returnMessageElement.prepend(returnMessageTxt);
+
+			});
+
+		// If nothing went wrong, send the message
+		}else if (typeof return_messages == 'undefined' || return_messages.length == 0){
+
+			// Empty the element from possibly previous returnMessages
+			returnMessagesListClientElement.innerHTML = "";
+
+			returnMessageContainerClientElement.style.display = "block";
+			
+			// Give the following message to the user
+			returnMessageH1ClientElement.innerHTML = "Your message has been sent!";
+			returnMessageH2ClientElement.innerHTML = "We will get back to you as soon as possible";
+			redirectMessageContainerElement.style.display = "block";
+			redirectMessageContainerElement.innerHTML = "You will be redirected in less than 5 sec..."
 
 			contactFormElement.submit();
 		}
