@@ -15,6 +15,14 @@
 	margin-right: 3%;
 }
 
+/* #searchH1{
+	margin: 1% 0;
+	padding: 1%;
+	text-transform: uppercase;
+	color: #1d1d1d;
+	background-color: none;
+} */
+
 /* <------- Header -------> */
 
 /* <------- Hero End -------> */
@@ -41,6 +49,7 @@
 #searchIcon{
 	text-align: center;
 	font-size: 1.5em;
+	padding-left: 5px;
 }
 
 /*----------------------------------------------- Form END --------------------------------------------------*/
