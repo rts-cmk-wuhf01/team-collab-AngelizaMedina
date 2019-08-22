@@ -126,12 +126,14 @@ document.addEventListener ("DOMContentLoaded", () => {
 
 				// Insert returnMessageTxt before the styled exclamation mark 
 				returnMessageElement.prepend(returnMessageTxt);
-				
 
 			});
 
 		// If nothing went wrong, send the message
-		}else if (return_messages.length == 0){
+		}else if (typeof return_messages == 'undefined' || return_messages.length == 0){
+
+			// Empty the element from possibly previous returnMessages
+			returnMessagesListClientElement.innerHTML = "";
 
 			returnMessageContainerClientElement.style.display = "block";
 			
