@@ -15,6 +15,45 @@
 	margin-right: 3%;
 }
 
+/* <------- Header -------> */
+header{
+	height: 60px;
+	background: linear-gradient(0deg, rgba(22,22,22,1) 0%, rgba(29,29,29,1) 100%);
+	display: flex;
+	align-items: center;
+}
+.logo{
+	width: 100px;
+	height: 100%;
+	background-color: #EBCA4A;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.logo-text{
+	color: #1D1D1D;
+	font-size: 13px;
+	text-align: center;
+	text-transform: uppercase;
+}
+ul{
+	display: flex;
+	padding: 30px;
+}
+li{
+	list-style-type: none;
+	padding: 0 10px;
+}
+li a{
+    color: #EBCA4A;
+    text-decoration: none;
+    font-weight: bold;
+	text-transform: uppercase;
+	padding: 0 15px;
+	font-size: 14px;
+}
+/* <------- Hero End -------> */
+
 /*-------------------------------------------------- Form -----------------------------------------------*/
 
 #searchFormField{
