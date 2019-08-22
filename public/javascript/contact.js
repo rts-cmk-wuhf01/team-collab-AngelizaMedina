@@ -13,8 +13,6 @@ document.addEventListener ("DOMContentLoaded", () => {
 		//Reason we prevent is because we want to validate the function before the default event takes place
 		event.preventDefault();
 
-		const returnMessageElement = document.querySelector("#testContainer");
-
 		//Form input values
 		let nameValue = contactFormElement.name.value;
 		let surnameValue = contactFormElement.surname.value;
@@ -24,8 +22,15 @@ document.addEventListener ("DOMContentLoaded", () => {
 
 
 		//Page elements
-		const returnMessageH1Element = document.querySelector('#returnMessageH1');
-		const returnMessageH2Element = document.querySelector('#returnMessageH2');
+		const returnMessageContainerClientElement = document.querySelector("#returnMessageContainerClient");
+		const returnMessageH1ClientElement = document.querySelector('#returnMessageH1Client');
+		const returnMessageH2ClientElement = document.querySelector('#returnMessageH2Client');
+
+		//Place in the HTML where the cloned element will be placed
+		let returnMessagesListClientElement = document.querySelector ("#returnMessagesListClient");
+
+		//Our HTML element template
+		let returnMessageTemplateElement = document.querySelector ("#returnMessageTemplate .returnMessage");
 
 		let nameElement = contactFormElement.name;
 		let surnameElement = contactFormElement.surname;
@@ -96,14 +101,40 @@ document.addEventListener ("DOMContentLoaded", () => {
 		if(returnMessages.length > 0){
 			event.preventDefault();
 
-			returnMessageH1Element.innerHTML = "Something went wrong...";
-			returnMessageH2Element.innerHTML = "Check following:";
+			returnMessageContainerClientElement.style.display = "block";
+
+			// Give the following message to the user
+			returnMessageH1ClientElement.innerHTML = "Something went wrong...";
+			returnMessageH2ClientElement.innerHTML = "Check following:";
 
 			returnMessages.forEach(returnMessage => {
-				console.log(returnMessage);
-			})
+				// console.log(returnMessage); //TESTER
 
+				// const returnMessagesListClientElement = document.querySelector("#returnMessagesListClient");
+
+				// const returnMessageElements = returnMessagesListClientElement.querySelectorAll(".returnMessage");
+
+				//The value of productElement changes for everytime the code is executed
+				let returnMessageElement;
+
+				//cloneNode(true), means that the childElements will be cloned too
+				returnMessageElement = returnMessageTemplateElement.cloneNode(true);
+
+				returnMessageElement.innerHTML = returnMessage;
+
+				//Inserts our cloned HTML element inside our #products div
+				returnMessagesListClientElement.appendChild(returnMessageElement);
+
+			});
+
+		// If nothing went wrong, send the message
 		}else if (return_messages.length == 0){
+
+			returnMessageContainerClientElement.style.display = "block";
+			
+			// Give the following message to the user
+			returnMessageH1ClientElement.innerHTML = "Your message has been sent!";
+			returnMessageH2ClientElement.innerHTML = "We will get back to you as soon as possible";
 
 			contactFormElement.submit();
 		}

@@ -59,7 +59,11 @@
 	color: #FFF;
 }
 
-#returnMessageContainer{
+#returnMessageContainerClient{
+	display: none;
+}
+
+#returnMessageContainerServer, #returnMessageContainerClient{
 	align-items: flex-end;
 	width: 40%;
 	margin: 2% 1%;
@@ -72,14 +76,18 @@
 	list-style-position: inside;
 }
 
-#returnMessageH1{
+#returnMessageH1Server, #returnMessageH1Client{
 	margin-bottom: 1%;
 	font-size: 1.7em;
 }
 
-#returnMessageH2{
+#returnMessageH2Server, #returnMessageH2Client{
 	margin: 2% 0;
 	font-size: 1.3em;
+}
+
+#returnMessageTemplate{
+	display: none;
 }
 
 .exclamationMark{

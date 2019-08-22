@@ -28,7 +28,7 @@
 
 			<h1 id="contactH1">Contact Us</h1>
 
-			<div id="formSectionContainer">
+			<section id="formSectionContainer">
 				<form id="contactForm" method="post">
 					<div class="contactFormField">
 							<input 
@@ -78,37 +78,49 @@
 
 				</form> <!-- #ContactForm end -->
 
-					<div id="returnMessageContainer">
-							<h1 id="returnMessageH1"></h1>
+				<!-- returnMessageContainer after client side validation -->
+				<div id="returnMessageContainerClient">
+						<h1 id="returnMessageH1Client"></h1>
 
-							<h2 id="returnMessageH2"></h1>
+						<h2 id="returnMessageH2Client"></h1>
 
-						<ul id="returnMessagesList">
-								<li class="returnMessage"><span class="exclamationMark">!</span><br></li>
-						</ul>
-					</div> <!-- #returnMessageContainer -->
+					<!-- <ul id="returnMessagesListClient">
+							<li class="returnMessage"><span class="exclamationMark">!</span><br></li>
+					</ul> -->
+
+					<ul id="returnMessagesListClient"></ul>
+
+					<div id="returnMessageTemplate">
+						<li class="returnMessage">
+							Dummy return message <span class="exclamationMark">!</span><br>
+						</li>
+					</div>
+
+				</div> <!-- #returnMessageContainer -->
+				<!-- returnMessageContainer after client side validation end -->
 				
+				<!-- returnMessageContainer after server side validation -->
 				<% if( typeof return_messages != 'undefined'){ %>
-					<div id="returnMessageContainer">
+					<div id="returnMessageContainerServer">
 
 						<% if( typeof return_message_h1 != 'undefined'){ %>
-							<h1 id="returnMessageH1"><%= return_message_h1 %></h1>
+							<h1 id="returnMessageH1Server"><%= return_message_h1 %></h1>
 						<% } %>
 
 						<% if( typeof return_message_h2 != 'undefined'){ %>
-							<h2 id="returnMessageH2"><%= return_message_h2 %></h1>
+							<h2 id="returnMessageH2Server"><%= return_message_h2 %></h1>
 						<% } %>
 
-						<ul>
+						<ul id="returnMessagesListServer">
 							<% return_messages.forEach(return_message => { %>
 								<li class="returnMessage"><%= return_message %><span class="exclamationMark">!</span><br></li>
-							<% }) %> <!-- return_messages.forEach end -->
+							<% }) %> <!-- return_messages.forEach END -->
 						</ul>
 					</div> <!-- #returnMessageContainer -->
 				<% } %> <!-- if( typeof return_messages END) -->
-			</div> <!-- #formSectionContainer END -->
+				<!-- returnMessageContainer after server side validation END -->
 
-			<div id="testContainer"></div>
+			</section> <!-- #formSectionContainer END -->
 
 		</main>
 
