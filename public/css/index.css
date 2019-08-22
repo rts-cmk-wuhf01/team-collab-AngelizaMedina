@@ -121,6 +121,7 @@ main{
 	color: #ffffff;
 	text-transform: uppercase;
 	font-weight: bold;
+	cursor: pointer;
 }
 .overlay {
 	position: absolute;
