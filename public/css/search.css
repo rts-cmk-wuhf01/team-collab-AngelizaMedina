@@ -52,7 +52,9 @@
 
 #outerBox{
 	margin: 3% auto auto auto;
-    height: 100%;
+	display: flex;
+	width: 100%;
+    overflow: hidden;
 }
 
 #resultH2{

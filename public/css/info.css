@@ -36,42 +36,41 @@ p{
 /*INFO*/
 
 #outerBox {
-	
 	height: 315px;
 	background-color: #FFFFFF;
 	color: #1D1D1D;
-	display: flex;
 	border-radius: 5px;
 	/* box-shadow: 0px 1px 15px #0000001f; */
 	box-shadow: 0px 10px 20px #00000029;
-	display: flex;
 }
 
-/* #moviePoster {
+#moviePoster {
 	height: 100%;
-	width: 18%;
-} */
+    width: 23%;
+}
 
 #moviePoster img {
 	width: 100%;
 	height: 100%;
 }
 
-/* #movieTrailer {
-	width: 50%;
-	height: 55%;
-} */
+#movieTrailer {
+	position: relative;
+    padding-top: 0px;
+    height: 100%;
+    overflow: hidden;
+}
 
 #movieText {
-	/* width: 35%; */
 	height: 100%;
+    width: 27%;
 }
 
 #innerMovieText {
-	padding: 35px;
-	width: 80%;
-	margin: auto;
-	line-height: 2;
+    padding: 10px;
+    width: 80%;
+    margin: 20px auto;
+    line-height: 2;
 }
 
 #innerMovieText a {
@@ -190,7 +189,11 @@ p{
 }
 
 #movieTrailerv2 iframe {
+	position: absolute;
+	top:0;
+	left: 0;
 	width: 100%;
+	height: 100%;
 }
 
 /*INFOv2 END*/
