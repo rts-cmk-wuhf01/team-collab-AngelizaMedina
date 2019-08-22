@@ -40,7 +40,7 @@ document.addEventListener ("DOMContentLoaded", () => {
 		let messageElement = contactFormElement.message;
 
 
-		//Place to store the different errors
+		// Variable to store the different errors
 		let returnMessages = [];
 
 
@@ -102,7 +102,7 @@ document.addEventListener ("DOMContentLoaded", () => {
 		if(returnMessages.length > 0){
 			event.preventDefault();
 
-			// Empty the element from possibly previous returnMessages
+			// Empty the element from previous returnMessages
 			returnMessagesListClientElement.innerHTML = "";
 
 			returnMessageContainerClientElement.style.display = "block";
