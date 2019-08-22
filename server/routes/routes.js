@@ -260,11 +260,11 @@ async function getSearchResults(searchInput) {
 	let [searchResults] = await db.execute(`
 
 		SELECT 
-    movie_id,
+    	movie_id,
 		movie_title,
 		movie_img,
 		movie_trailer,
-		movie_resume
+		SUBSTRING(movie_resume, 1, 60) AS movie_resume
         
  		FROM movies 
  
