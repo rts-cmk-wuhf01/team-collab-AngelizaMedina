@@ -3,9 +3,9 @@ footer{
 	background-color: #ffffff;
 	height: 50px;
 	color: #BBBBBB;
-	position: absolute;
 	bottom: 0;
 	left: 0;
+	margin-top: 10px;
 }
 footer p{
 	color: #BBBBBB;

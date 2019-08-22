@@ -15,7 +15,7 @@
 	<link rel="stylesheet" href="/css/header.css">
 	<link rel="stylesheet" href="/css/info.css">
 	<link rel="stylesheet" href="/css/search.css">
-	<link rel="stylesheet" href="css/footer.css">
+	<link rel="stylesheet" href="/css/footer.css">
 
 	<!-- Font Awesome link -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" 
@@ -45,9 +45,10 @@
 				</form> <!-- #searchForm END -->
 			</section> <!-- #searchSection END -->
 
-			<% if(typeof searchResults != 'undefined') { %>
+			
 				<section id="resultSection">
 					<h2 id="resultH2">Results</h2>
+				<% if(typeof searchResults != 'undefined') { %>
 					<% searchResults.forEach(searchResult => { %>
 						<div id="outerBox">
 							<div id="moviePoster">
@@ -66,9 +67,9 @@
 								</div>
 							</div>
 						</div> <!-- #outerBox END -->
-					</section> <!-- #resultSection END -->
-				<% }) %> <!-- searchResults.forEach END -->
-			<% } %> <!-- if(typeof searchResults...) END -->
+					<% }) %> <!-- searchResults.forEach END -->
+				<% } %> <!-- if(typeof searchResults...) END -->
+				</section> <!-- #resultSection END -->
 
 		</main>
 
