@@ -235,7 +235,9 @@ async function getChosenMovie(movie_id){
 		movie_trailer,
 		movie_resume,
 		movie_genre,
-		movie_scene
+		movie_scene,
+		movie_director,
+		movie_cast
         
  		FROM movies 
  
