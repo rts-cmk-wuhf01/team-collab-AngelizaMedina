@@ -7,6 +7,7 @@
 	padding: 1%;
 	text-transform: uppercase;
 	color: #1d1d1d;
+	background-color: none;
 }
 
 #formSectionContainer{
@@ -114,7 +115,7 @@
 }
 
 /* <------- Header -------> */
-.hero-image{
+/* .hero-image{
 	background: url(../images/movie_scene/edgeoftomorrow.jpg);
 	background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -164,7 +165,7 @@ li a{
 	text-transform: uppercase;
 	padding: 0 15px;
 	font-size: 14px;
-}
+} */
 /* <------- Header End -------> */
 
 

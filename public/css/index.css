@@ -33,6 +33,10 @@ header{
 	width: 65%;
     margin: 0 auto;
 }
+header{
+	margin-top: 0;
+}
+
 /* <------- Header End -------> */
 /* <------- Hero -------> */
 .hero{
