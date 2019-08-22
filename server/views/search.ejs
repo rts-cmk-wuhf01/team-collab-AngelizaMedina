@@ -16,6 +16,8 @@
 	<link rel="stylesheet" href="/css/info.css">
 	<link rel="stylesheet" href="/css/search.css">
 	<link rel="stylesheet" href="/css/header.css">
+	<link rel="stylesheet" href="css/footer.css">
+
 
 	<!-- Font Awesome link -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" 
@@ -26,7 +28,7 @@
 	<div id="wrapper">
 		<%- include('partials/header') %>
 
-		<main>
+		<main id="searchPageMain">
 
 			<section id="searchSection">
 				<h1 id="searchH1">Search</h1>
@@ -66,16 +68,17 @@
 								</div>
 							</div>
 						</div> <!-- #outerBox END -->
-					</section>
+					</section> <!-- #resultSection END -->
 				<% }) %> <!-- searchResults.forEach END -->
 			<% } %> <!-- if(typeof searchResults...) END -->
 
 		</main>
-
 		
 		<%- include('partials/footer') %>
 	</div> <!-- #wrapper end -->
 	
+	</div> <!-- #wrapper end -->
+
 </body>
 
 	<!-- Javascript link -->

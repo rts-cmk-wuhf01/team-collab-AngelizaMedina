@@ -12,6 +12,7 @@ body{
 	background-color: #F3F3F3;
 	max-width: 100vw;
 	height: 100vh;
+	position: relative;
 } 
 /* <------- Header -------> */
 .hero-image{
@@ -64,6 +65,7 @@ header{
 	margin-top: 50px;
 	font-size: 17px;
 	color: #1d1d1d;
+	cursor: pointer;
 }
 /* <------- Hero End -------> */
 /* <------- Movie Grid -------> */
@@ -124,6 +126,7 @@ main{
 	color: #ffffff;
 	text-transform: uppercase;
 	font-weight: bold;
+	cursor: pointer;
 }
 .overlay {
 	position: absolute;
@@ -151,14 +154,6 @@ main{
 	width: 90%;
 }
 footer{
-	width: 100%;
-	background-color: #ffffff;
-	height: 50px;
-	color: #BBBBBB;
-}
-footer p{
-	color: #BBBBBB;
-	text-align: center;
-	padding-top: 15px;
+	position: static;
 }
 /* <------- Movie Grid End -------> */

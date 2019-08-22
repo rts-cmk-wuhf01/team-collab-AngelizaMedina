@@ -205,7 +205,11 @@ module.exports = (app) => {
 		
 			db.end();
 
-			res.redirect('/contact');
+
+			// Delay the redirect by 3 sec. so that the user can read that his/her message was sent
+			setTimeout(function(){ 
+				res.redirect('/contact');
+			}, 3000);
 
 		} // else if(...) END
 		
