@@ -164,7 +164,7 @@ p{
 
 #moviePosterv2 img {
 	height: 100%;
-	width: 100%;
+	/* width: 100%; */
 }
 
 #innerBoxv2 {
@@ -179,6 +179,7 @@ p{
 
 #movieTextv2 {
 	padding-top: 20px;
+	width: 95%;
 }
 
 /*INFOv2 END*/
