@@ -86,6 +86,16 @@
 	font-size: 1.3em;
 }
 
+#returnMessagesListClient{
+	flex-direction: column;
+}
+
+.returnMessage{
+	list-style-type: disc;
+	list-style-position: outside;
+	align-self: flex-start;
+}
+
 #returnMessageTemplate{
 	display: none;
 }

@@ -29,9 +29,10 @@ document.addEventListener ("DOMContentLoaded", () => {
 		//Place in the HTML where the cloned element will be placed
 		let returnMessagesListClientElement = document.querySelector ("#returnMessagesListClient");
 
-		//Our HTML element template
+		//The returnMessage li template
 		let returnMessageTemplateElement = document.querySelector ("#returnMessageTemplate .returnMessage");
 
+		// Form Input elements
 		let nameElement = contactFormElement.name;
 		let surnameElement = contactFormElement.surname;
 		let emailElement = contactFormElement.email;
@@ -108,11 +109,6 @@ document.addEventListener ("DOMContentLoaded", () => {
 			returnMessageH2ClientElement.innerHTML = "Check following:";
 
 			returnMessages.forEach(returnMessage => {
-				// console.log(returnMessage); //TESTER
-
-				// const returnMessagesListClientElement = document.querySelector("#returnMessagesListClient");
-
-				// const returnMessageElements = returnMessagesListClientElement.querySelectorAll(".returnMessage");
 
 				//The value of productElement changes for everytime the code is executed
 				let returnMessageElement;
@@ -120,10 +116,14 @@ document.addEventListener ("DOMContentLoaded", () => {
 				//cloneNode(true), means that the childElements will be cloned too
 				returnMessageElement = returnMessageTemplateElement.cloneNode(true);
 
-				returnMessageElement.innerHTML = returnMessage;
+				let returnMessageTxt = document.createTextNode(returnMessage);
 
-				//Inserts our cloned HTML element inside our #products div
+				// Inserts our cloned HTML element inside our returnMessagesListClientElement (ul)
 				returnMessagesListClientElement.appendChild(returnMessageElement);
+
+				// Insert returnMessageTxt before the styled exclamation mark 
+				returnMessageElement.prepend(returnMessageTxt);
+				
 
 			});
 
