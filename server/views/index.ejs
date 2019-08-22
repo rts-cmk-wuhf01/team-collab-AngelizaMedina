@@ -10,9 +10,8 @@
 	<title>Movie info - Home</title>
 
 	<!-- css link -->
-    <!-- <link rel="stylesheet" href="css/style.css"> -->
-    <link rel="stylesheet" href="css/index.css">
-
+    <link rel="stylesheet" href="css/header.css">
+	<link rel="stylesheet" href="css/index.css">
 	<!-- Font Awesome link -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" 
 	integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
@@ -20,9 +19,7 @@
 
 <body>
 	
-	
 	<div class="hero-image">
-
         <div class="wrapper">
 			<%- include('partials/header') %>
 			<%- include('partials/hero') %>
@@ -42,9 +39,11 @@
 								<a href="/info/<%= movie.movie_id %>"><div class="overlay">
 									<div class="resume-text"><%= movie.movie_resume %></div>
 								</div></a>
-								<h5 class="movie-title-preview"><%= movie.movie_title %></h5>
-								<p class="movie-genre-preview"><%= movie.movie_genre %></p>
-								<a href="/info/<%= movie.movie_id %>"><button class="more-btn">More</button></a>
+								<div class="movie-preview-text-box">
+									<h5 class="movie-title-preview"><%= movie.movie_title %></h5>
+									<p class="movie-genre-preview"><%= movie.movie_genre %></p>
+									<a href="/info/<%= movie.movie_id %>"><button class="more-btn">More</button></a>
+								</div>
 							</div>
 						<% }); %>
 						<% } %>

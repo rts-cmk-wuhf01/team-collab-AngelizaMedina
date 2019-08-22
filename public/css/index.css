@@ -15,7 +15,7 @@ body{
 } 
 /* <------- Header -------> */
 .hero-image{
-	background: url(../images/movie_scene/edgeoftomorrow.jpg);
+	background: url("../images/movie_scene/edgeoftomorrow.jpg");
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
@@ -28,42 +28,6 @@ body{
 .wrapper{
 	width: 65%;
     margin: 0 auto;
-}
-header{
-	height: 60px;
-	background-color: #1D1D1D;
-	display: flex;
-	align-items: center;
-}
-.logo{
-	width: 100px;
-	height: 100%;
-	background-color: #EBCA4A;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-.logo-text{
-	color: #1D1D1D;
-	font-size: 13px;
-	text-align: center;
-	text-transform: uppercase;
-}
-ul{
-	display: flex;
-	padding: 30px;
-}
-li{
-	list-style-type: none;
-	padding: 0 10px;
-}
-li a{
-    color: #EBCA4A;
-    text-decoration: none;
-    font-weight: bold;
-	text-transform: uppercase;
-	padding: 0 15px;
-	font-size: 14px;
 }
 /* <------- Header End -------> */
 /* <------- Hero -------> */
@@ -129,6 +93,9 @@ main{
 }
 .movie-poster{
 	height: 584,5px;
+	width: 100%;
+}
+.movie-preview-text-box{
 	width: 100%;
 }
 .movie-title-preview{
