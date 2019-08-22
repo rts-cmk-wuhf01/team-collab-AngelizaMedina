@@ -15,7 +15,7 @@ body{
 }
 /* <------- Header -------> */
 .hero-image{
-	background: url(../images/movie_scene/thesocialnetwork.jpg);
+	background: url("../images/movie_scene/goodfellas.jpg");
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: cover;

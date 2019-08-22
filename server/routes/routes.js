@@ -22,8 +22,6 @@ module.exports = (app) => {
 		   FROM movies 
 		`);
 
-
-	 
 		db.end();
 		
 		res.render('index', {
