@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Vært: 127.0.0.1
--- Genereringstid: 23. 08 2019 kl. 11:17:41
+-- Genereringstid: 23. 08 2019 kl. 12:36:41
 -- Serverversion: 10.1.30-MariaDB
 -- PHP-version: 7.2.1
 
@@ -31,19 +31,12 @@ SET time_zone = "+00:00";
 CREATE TABLE `messages` (
   `message_id` int(11) NOT NULL,
   `message_name` varchar(100) CHARACTER SET utf8 NOT NULL,
-  `messages_surname` varchar(100) CHARACTER SET utf8 NOT NULL,
+  `message_surname` varchar(100) CHARACTER SET utf8 NOT NULL,
   `message_email` varchar(100) CHARACTER SET utf8 NOT NULL,
   `message_subject` varchar(100) CHARACTER SET utf8 NOT NULL,
   `message_message` varchar(500) CHARACTER SET utf8 NOT NULL,
   `message_date_time` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Data dump for tabellen `messages`
---
-
-INSERT INTO `messages` (`message_id`, `message_name`, `messages_surname`, `message_email`, `message_subject`, `message_message`, `message_date_time`) VALUES
-(1, 'yo baba', '', 'yobabaraps@coooool.com', ':)', 'koalaer', '2019-08-20 12:01:34');
 
 -- --------------------------------------------------------
 
@@ -112,7 +105,7 @@ ALTER TABLE `movies`
 -- Tilføj AUTO_INCREMENT i tabel `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `message_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `message_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Tilføj AUTO_INCREMENT i tabel `movies`
