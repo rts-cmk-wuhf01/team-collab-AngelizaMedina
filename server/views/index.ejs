@@ -25,19 +25,8 @@
 	<div class="hero-image" style='background: url("/images/movie_scene/<%= heroImage.movie_scene %>") no-repeat; background-attachment: fixed; background-size: cover;'>
 	<% }); %>
         <div class="wrapper">
-			<header>
-				<div class="logo">
-					<h1 class="logo-text">MovieSite</h1>
-				</div>
-				<nav>
-					<ul>
-						<li><a href="/">Movies</a></li>
-						<li><a href="/search">Search</a></li>
-						<li><a href="/contact">Contact Us</a></li>
-					</ul>
-							
-					</nav>  
-			</header>
+
+			<%- include('partials/header') %>
 					
 			<%- include('partials/hero') %>
             <main>
