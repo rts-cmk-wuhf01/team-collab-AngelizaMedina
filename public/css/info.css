@@ -201,4 +201,8 @@ p{
 	height: 100%;
 }
 
+iframe {
+	width: 500px;
+}
+
 /*INFOv2 END*/
