@@ -11,6 +11,21 @@ module.exports = (app) => {
 	app.get('/', async (req, res, next) => {
 
 		let db = await mysql.connect();
+
+		let [heroImage] = await db.execute(`
+			SELECT
+			movie_id,
+			movie_title,
+			movie_img,
+			movie_resume,
+			movie_genre,
+			movie_scene
+			
+			FROM movies 
+
+			ORDER BY RAND() LIMIT 1
+
+		`);
 		
 		let [movies] = await db.execute(`
 		   SELECT
@@ -18,14 +33,18 @@ module.exports = (app) => {
 			  movie_title,
 			  movie_img,
 			  movie_resume,
-			  movie_genre
-		   FROM movies 
+				movie_genre
+				
+			 FROM movies 
+
 		`);
 
 		db.end();
 		
 		res.render('index', {
-		   'movies': movies,
+			'heroImage': heroImage,
+			'movies': movies
+			 
 		});
 
 	}); //app.get('/'.. end)

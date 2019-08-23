@@ -1,10 +1,10 @@
 <section class="hero">
-	<% if(typeof movies != 'undefined'){ %>
-		<% movies.slice(0, 1).forEach(movie =>{ %>
+	<% if(typeof heroImage != 'undefined'){ %>
+		<% heroImage.forEach(heroImage =>{ %>
 		<div class="hero-info">
-			<h1 class="movie-title-big"><%= movie.movie_title %></h1>
-			<p class="movie-genre"><%= movie.movie_genre %></p>
-			<a href="/info/<%= movie.movie_id %>"><button class="movie-details">Learn More</button></a>
+			<h1 class="movie-title-big"><%= heroImage.movie_title %></h1>
+			<p class="movie-genre"><%= heroImage.movie_genre %></p>
+			<a href="/info/<%= heroImage.movie_id %>"><button class="movie-details">Learn More</button></a>
 		</div>
 		<% }); %>
 	<% } %>
