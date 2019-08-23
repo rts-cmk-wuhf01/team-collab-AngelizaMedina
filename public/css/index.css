@@ -19,7 +19,7 @@ header{
 	margin-top: 0;
 }
 .hero-image{
-	background: url("../images/movie_scene/edgeoftomorrow.jpg");
+	/* background: url("../images/movie_scene/edgeoftomorrow.jpg"); */
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
