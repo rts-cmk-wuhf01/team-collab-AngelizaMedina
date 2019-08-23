@@ -21,7 +21,9 @@
 
 <body>
 	
-	<div class="hero-image">
+	<% heroImage.forEach(heroImage =>{ %>
+	<div class="hero-image" style='background: url("/images/movie_posters/<%= heroImage.movie_img %>")'>
+	<% }); %>
         <div class="wrapper">
 			<header>
 				<div class="logo">
